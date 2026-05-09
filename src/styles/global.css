@@ -15,13 +15,59 @@ body {
     line-height: 1.6;
 }
 
-nav {
-    background: white;
-    padding: 1.5rem;
+
+/* --- LE HEADER ET LA BANNIÈRE --- */
+
+header {
+    /* Change .jpg en .png si ton image de bannière est un png */
+    min-height: 150px;
+    background-image: url('/images/fond_banniere.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    /* Ajoute le fond crème de ton site au header */
+    background-color: white;
+    /* LA LIGNE MAGIQUE : Multiplie l'image avec la couleur de fond */
+    background-blend-mode: multiply;
+}
+
+
+/* C'EST ICI QUE LA MAGIE OPÈRE */
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    /* Oblige les éléments à se mettre en ligne */
+    align-items: center;
+    /* Les centre verticalement */
+    justify-content: space-between;
+    /* Pousse le logo à gauche et le bouton à droite */
+}
+
+
+/* On force la taille du logo pour qu'il ne prenne pas tout l'écran */
+
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+nav {
+    /*background: white;*/
+    display: flex;
+    justify-content: left;
     gap: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    /* C'est cette ligne qui fait descendre le menu ! */
+    margin-top: 50px;
+    margin-right: 90px;
 }
 
 nav a {
