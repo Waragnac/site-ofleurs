@@ -34,9 +34,6 @@ header {
     background-blend-mode: multiply;
 }
 
-
-/* C'EST ICI QUE LA MAGIE OPÈRE */
-
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -61,7 +58,7 @@ nav {
     /*background: white;*/
     display: flex;
     justify-content: left;
-    gap: 30px;
+    gap: 120px;
     background: transparent;
     box-shadow: none;
     padding: 0;
@@ -76,7 +73,7 @@ nav a {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
 }
 
 nav a:hover {
