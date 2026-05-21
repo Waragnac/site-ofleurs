@@ -1,8 +1,29 @@
+/* RESET DU HTML */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Évite les problèmes de calcul de largeur avec les paddings */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+    /* Sécurité pour éviter un scroll horizontal bizarre */
+}
+
+
 /* --- LE HEADER ET LA BANNIÈRE --- */
 
 header {
     /* Change .jpg en .png si ton image de bannière est un png */
-    min-height: 150px;
+    min-height: 90px;
     background-image: url('/images/fond_banniere.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,7 +57,7 @@ header {
 /* On force la taille du logo pour qu'il ne prenne pas tout l'écran */
 
 .logo img {
-    height: 200px;
+    height: 80px;
     width: auto;
     display: block;
 }
@@ -96,7 +117,7 @@ nav a:hover {
 .user-space .btn-login {
     text-decoration: none;
     color: var(--primary);
-    border: 1.5px solid var(--primary);
+    border: 1.5px solid black;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -113,3 +134,260 @@ nav a:hover {
 
 
 /* ... LA SUITE DE TON CODE ICI (main, h1, .grille-produits...) ... */
+
+
+/* --- CODE GLOBAL POUR TOUTES LES BOUTIQUES (Cadres, Presses, Bijoux...) --- */
+
+.grille-produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.carte-produit {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e9edc9;
+    /* Ta bordure fine vert très clair */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.carte-produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(74, 93, 78, 0.1);
+}
+
+.carte-produit img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* Toutes les images feront pile la même taille sans déformer */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.carte-produit h3 {
+    font-family: 'Georgia', serif;
+    color: var(--text);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.prix-produit {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.btn-panier {
+    display: inline-flex;
+    /* Permet d'aligner l'icône et le texte */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Espace entre l'icône et le texte */
+    background-color: var(--accent);
+    color: black;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* --- L'ICÔNE DE PANIER EN SVG --- */
+
+.btn-panier::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    /* Voici le code SVG de l'icône "shopping-bag" en blanc */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z'%3E%3C/path%3E%3Cpath d='M3 6h18'%3E%3C/path%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.btn-panier:hover {
+    background-color: var(--primary);
+}
+
+
+/*----------------------- CSS SPECIFIQUE AUX PAGES ------------------------*/
+
+
+/*CONTACT*/
+
+
+/* --- MISE EN PAGE EN 2 COLONNES --- */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* La colonne formulaire est un poil plus large */
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    align-items: start;
+}
+
+
+/* --- STYLE COLONNE GAUCHE (BIO) --- */
+
+.profile-column {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e9edc9;
+    /* Rappel du vert très clair du site */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.photo-wrapper {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: #f4f4f4;
+    /* Fond gris en attendant l'image */
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-section h1 {
+    text-align: left;
+    /* On écrase le text-align: center global pour la bio */
+    margin-bottom: 0.2rem;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.bio-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* --- STYLE COLONNE DROITE (FORMULAIRE) --- */
+
+.form-column h2 {
+    color: var(--primary);
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.form-intro {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccd5ae;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    /* Devient doré/orange au clic */
+}
+
+
+/* --- LE BOUTON D'ENVOI --- */
+
+.btn-submit {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+
+/* --- RESPONSIVE (MOBILES) --- */
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        /* Passe sur une seule colonne sur mobile */
+        gap: 2.5rem;
+    }
+    .form-group-row {
+        flex-direction: column;
+        /* Prénom et nom l'un sous l'autre sur mobile */
+        gap: 1.2rem;
+    }
+}

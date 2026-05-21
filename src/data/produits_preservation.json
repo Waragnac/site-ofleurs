@@ -1,0 +1,17 @@
+[{
+        "id": 1,
+        "nom": "Médaillon Globulaire",
+        "description": "Fleurs cueillies au pied de la Sainte-Victoire, pressées et résinées à la main.",
+        "prix": "25€",
+        "image": "/images/globulaire.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 2,
+        "nom": "Boucles Amélanchier",
+        "description": "Délicates fleurs blanches printanières sous résine.",
+        "prix": "30€",
+        "image": "/images/amelanchier.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    }
+]

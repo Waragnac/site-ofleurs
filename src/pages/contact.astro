@@ -1,7 +1,57 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 ---
-<MainLayout title="Contact">
-	<h1>Elodie Bertrand</h1>
-	<p>Biographie à écrire</p>
+
+<MainLayout title="Contact - Ô Fleurs">
+    <div class="contact-container">
+        
+        <div class="profile-column">
+            <div class="photo-wrapper">
+                <img src="/images/elodie_atelier.jpg" alt="Élodie Bertrand au travail" class="profile-photo" />
+            </div>
+            <div class="bio-section">
+                <h1>Élodie Bertrand</h1>
+                <p class="subtitle">Artisane Botanique & Fondatrice de Ô Fleurs</p>
+                <p class="bio-text">
+                    Passionnée par la nature sauvage et la poésie des végétaux, j'ai créé Ô Fleurs pour immortaliser la beauté éphémère des fleurs. À travers mes presses, cadres et bijoux botaniques, je fige un instant de fraîcheur pour faire entrer la nature dans votre quotidien. Chaque pièce est cueillie et confectionnée à la main avec patience et amour dans mon atelier.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-column">
+            <h2>CONTACTEZ MOI</h2>
+            <p class="form-intro">Une question, une commande personnalisée ou un bouquet à préserver ? Écrivez-moi via ce formulaire, je vous répondrai avec grand plaisir.</p>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="firstname">Prénom</label>
+                        <input type="text" id="firstname" name="firstname" required placeholder="Votre prénom" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Nom</label>
+                        <input type="text" id="lastname" name="lastname" required placeholder="Votre nom" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse email</label>
+                    <input type="email" id="email" name="email" required placeholder="nom@exemple.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required placeholder="De quoi s'agit-il ?" />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Bonjour Élodie, je souhaiterais..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+        </div>
+
+    </div>
 </MainLayout>

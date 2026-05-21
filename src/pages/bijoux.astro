@@ -1,0 +1,14 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import bijoux from '../data/produits_bijoux.json';
+---
+<MainLayout title="Bijoux">
+  <h1>Le Magasin Ô Fleurs</h1>
+  <div class="grille-produits"> {bijoux.map((item) => (
+      <div class="carte-produit"> <img src={item.image} alt={item.nom} width="220px"/> <h3>{item.nom}</h3>
+        <p class="prix-produit">{item.prix}</p>
+        <a href={item.lienEtsy} target="_blank" class="btn-panier">Ajouter à votre panier</a>
+      </div>
+    ))}
+  </div>
+</MainLayout>
