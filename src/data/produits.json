@@ -1,0 +1,73 @@
+[{
+        "id": 1,
+        "nom": "Médaillon Globulaire",
+        "type": "bijoux",
+        "description": "Fleurs cueillies au pied de la Sainte-Victoire, pressées et résinées à la main.",
+        "prix": "25€",
+        "image": "/images/globulaire.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 2,
+        "nom": "Boucles Amélanchier",
+        "type": "bijoux",
+        "description": "Délicates fleurs blanches printanières sous résine.",
+        "prix": "30€",
+        "image": "/images/amelanchier.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 3,
+        "nom": "Préservation Bouquet Mariage",
+        "type": "preservation",
+        "description": "Nous séchons et conservons votre bouquet de mariée dans un cadre profond avec fond personnalisé.",
+        "prix": "120€",
+        "image": "/images/bouquet_mariage.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 4,
+        "nom": "Presse Botanique Initiale",
+        "type": "preservation",
+        "description": "Un modèle unique avec votre initiale gravée, parfait pour offrir en cadeau personnalisé.",
+        "prix": "55€",
+        "image": "/images/presse_initiale.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 5,
+        "nom": "Presse Sélénite",
+        "type": "presse",
+        "description": "Une presse artisanale en bois naturel, idéale pour conserver les fleurs de vos bouquets de mariage ou événements.",
+        "prix": "45€",
+        "image": "/images/presse_selenite.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 6,
+        "nom": "Presse Botanique Initiale",
+        "type": "presse",
+        "description": "Un modèle unique avec votre initiale gravée, parfait pour offrir en cadeau personnalisé.",
+        "prix": "55€",
+        "image": "/images/presse_initiale.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 7,
+        "nom": "Cadre Floral Rectangulaire",
+        "type": "cadre",
+        "description": "Une sélection harmonieuse de fleurs des champs figées dans une résine cristalline ultra-transparente.",
+        "prix": "65€",
+        "image": "/images/cadre_rectangulaire.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    },
+    {
+        "id": 8,
+        "nom": "Médaillon Résine & Fleurs",
+        "type": "cadre",
+        "description": "Un cadre mural circulaire mettant en valeur une composition botanique délicate et épurée.",
+        "prix": "48€",
+        "image": "/images/cadre_rond.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+    }
+]
