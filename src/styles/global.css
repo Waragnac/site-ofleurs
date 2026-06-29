@@ -1,3 +1,18 @@
+/* Import des polices depuis Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+:root {
+    /* Assure-toi que ces variables sont bien définies */
+    --primary: #4a5d4e;
+    /* Ton vert */
+    --accent: #d4a373;
+    /* Ton doré */
+    --bg: #fefcfb;
+    /* Un blanc crème très doux */
+    --text: #333;
+}
+
+
 /* RESET DU HTML */
 
 html,
@@ -9,13 +24,28 @@ body {
 }
 
 body {
-    font-family: 'Georgia', serif;
+    /*font-family: 'Georgia', serif;*/
+    font-family: 'Lato', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.7;
     width: 100%;
     overflow-x: hidden;
-    /* Sécurité pour éviter un scroll horizontal bizarre */
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    /* Les courbes romantiques */
+    color: var(--primary);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 
@@ -84,12 +114,13 @@ nav {
 }
 
 nav a {
+    font-family: 'Lato', sans-serif;
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    font-size: 0.75rem;
 }
 
 nav a:hover {
@@ -101,35 +132,30 @@ nav a:hover {
 
 .user-space {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    /* Un peu plus d'espace entre les deux icônes */
     align-items: center;
     position: absolute;
-    /* MODIFICATION : Sort les boutons du centre pour les placer librement */
-    right: 0;
-    /* Les colle sur la droite du conteneur de 1200px */
-    top: 10px;
-    /* Les place en haut (tu peux augmenter un peu ce chiffre si besoin) */
+    right: 200px;
+    /* Un peu d'air par rapport au bord droit */
+    top: 20px;
 }
 
-
-/* On peaufine le style des boutons pour qu'ils soient bien distincts */
-
-.user-space .btn-login {
-    text-decoration: none;
+.icon-link {
     color: var(--primary);
-    border: 1.5px solid black;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    background: white;
+    background-color: rgba(255, 255, 255, 2.9);
+    /* Fond blanc semi-transparent */
+    padding: 8px;
+    /* Espace autour de l'icône */
+    border-radius: 50%;
+    /* Forme ronde */
     transition: all 0.3s ease;
-    white-space: nowrap;
 }
 
-.user-space .btn-login:hover {
-    background: var(--primary);
-    color: white;
+.icon-link:hover {
+    background-color: var(--accent);
+    color: black;
+    /* L'icône devient blanche sur fond vert au survol */
 }
 
 
@@ -146,6 +172,7 @@ nav a:hover {
 }
 
 .carte-produit {
+    font-family: 'Playfair Display', serif !important;
     background: white;
     padding: 1.5rem;
     border-radius: 12px;
@@ -174,7 +201,7 @@ nav a:hover {
 }
 
 .carte-produit h3 {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     color: var(--text);
     font-size: 1.2rem;
     margin: 0.5rem 0;
@@ -298,7 +325,7 @@ nav a:hover {
 
 .form-column h2 {
     color: var(--primary);
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     margin-top: 0;
     margin-bottom: 0.5rem;
