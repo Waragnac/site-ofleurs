@@ -1,72 +1,109 @@
 [{
         "id": 1,
         "nom": "Collier collection Porcelaine orné de fleurs de pâquerettes",
-        "description": "Médaillon en inox argenté délicatement orné de fleurs de pâquerettes.",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de fleurs de pâquerettes. Fleurs cueillies et séchées par mes soins, figées dans de la résine epoxy.",
         "prix": "32€",
-        "image": "/images/collier_collection_porcelaine_orné_de_petites_fleurs.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/4521257418/collier-collection-porcelaine-orne-de?ref=shop_home_active_1&logging_key=9e77352e4770112a281d6c38704185248125e775%3A4521257418"
+        "image": "/images/collier_collection_porcelaine_orné_de_paquerettes.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4521245009/collier-collection-porcelaine-orne-de?ref=shop_home_active_2&logging_key=dacb6e99beb623e2ca3bb8f7a7471c54c5665e41%3A4521245009"
     },
     {
         "id": 2,
-        "nom": "Boucles Amélanchier",
+        "nom": "Collier collection Porcelaine orné de petites feuilles",
         "type": "bijoux",
-        "description": "Délicates fleurs blanches printanières sous résine.",
-        "prix": "30€",
-        "image": "/images/amelanchier.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "description": "Médaillon en inox argenté délicatement orné de fleurs de pâquerettes. Fleurs cueillies et séchées par mes soins, figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_collection_porcelaine_orné_de_petites_feuilles.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4521257418/collier-collection-porcelaine-orne-de?ref=shop_home_active_1&logging_key=9e77352e4770112a281d6c38704185248125e775%3A4521257418"
     },
     {
         "id": 3,
-        "nom": "Préservation Bouquet Mariage",
-        "type": "preservation",
-        "description": "Nous séchons et conservons votre bouquet de mariée dans un cadre profond avec fond personnalisé.",
-        "prix": "120€",
-        "image": "/images/bouquet_mariage.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "nom": "Collier vert rond orné de fleurs d'alliaire ",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de fleur d'alliaire. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_vert_rond_orné_de_fleurs_dalliaire.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520946485/collier-vert-rond-orne-de-fleurs?ref=shop_home_active_3&logging_key=2c9b8891bceb541ee2546f89c9f0aa3d9ce90018%3A4520946485"
     },
     {
         "id": 4,
-        "nom": "Dôme Floral Souvenir",
-        "type": "preservation",
-        "description": "Une sélection de fleurs de votre bouquet mise en valeur sous un élégant dôme en verre.",
-        "prix": "85€",
-        "image": "/images/dome_floral.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "nom": "Collier vert en dentelle de la reine Anne de forme ovale",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de dentelle de la reine Anne de forme ovale. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_vert_dentelle_reine_anne.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520946420/collier-vert-en-dentelle-de-la-reine?ref=shop_home_active_4&logging_key=64744fa5f389cfcf5a8f6c8e7a138428b094016c%3A4520946420"
     },
     {
         "id": 5,
-        "nom": "Presse Sélénite",
-        "type": "presse",
-        "description": "Une presse artisanale en bois naturel, idéale pour conserver les fleurs de vos bouquets de mariage ou événements.",
-        "prix": "45€",
-        "image": "/images/presse_selenite.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "nom": "Collier violet en dentelle de la reine Anne de forme ronde",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de dentelle de la reine Anne de forme ronde. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_violet_dentelle_reine_anne.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520750755/collier-violet-en-dentelle-de-la-reine?ref=shop_home_active_5&logging_key=7ff327f1abf8eaaeaae5c6857d75c572c908f4a3%3A4520750755"
     },
     {
         "id": 6,
-        "nom": "Presse Botanique Initiale",
-        "type": "presse",
-        "description": "Un modèle unique avec votre initiale gravée, parfait pour offrir en cadeau personnalisé.",
-        "prix": "55€",
-        "image": "/images/presse_initiale.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "nom": "Collier vert en dentelle de la reine Anne de forme ronde",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de dentelle de la reine Anne de forme ronde. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_vert_dentelle_reine_anne_forme_ronde.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520746260/collier-vert-en-dentelle-de-la-reine?ref=shop_home_active_6&logging_key=15b4b4b6c9b3ff608cea396c086b639e596008df%3A4520746260"
     },
     {
         "id": 7,
-        "nom": "Cadre Floral Rectangulaire",
-        "type": "cadre",
-        "description": "Une sélection harmonieuse de fleurs des champs figées dans une résine cristalline ultra-transparente.",
-        "prix": "65€",
-        "image": "/images/cadre_rectangulaire.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "nom": "Collier violet en dentelle de la reine Anne de forme ovale",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de dentelle de la reine Anne de forme ronde. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520338076/collier-violet-en-dentelle-de-la-reine?ref=shop_home_active_7&logging_key=5c32eb594dc4d7fd8e77d8f5eefa9f6c037bd67a%3A4520338076"
     },
     {
         "id": 8,
-        "nom": "Médaillon Résine & Fleurs",
+        "nom": "Collier noir en dentelle de la reine Anne de forme ovale",
+        "type": "bijoux",
+        "description": "Médaillon en inox cuivré délicatement orné de dentelle de la reine Anne de forme ovale. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_noir_dentelle_reine_anne_forme_ovale.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520329442/collier-noir-en-dentelle-de-la-reine?ref=shop_home_active_8&logging_key=a46de8a25f2aabf7eb856351ecf28713f72df96c%3A4520329442"
+    },
+    {
+        "id": 9,
+        "nom": "Collier violet orné de fleurs sechées",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de fleurs séchées. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/collier_violet_orne_fleurs_sechées.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520191395/collier-violet-orne-de-fleurs-sechees?ref=shop_home_active_9&logging_key=d4acbfe2d3567c1514be7f8540cf65099e37c79f%3A4520191395"
+    },
+    {
+        "id": 10,
+        "nom": "Collier collection Porcelaine orné de petites fleurs des champs",
+        "type": "bijoux",
+        "description": "Médaillon en inox argenté délicatement orné de fleurs de différentes petites fleurs des champs : véroniques bleues et violettes , lilas, géranium sauvage , fougères... Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "42€",
+        "image": "/images/collier_collection_porcelaine_orné_de_petites_fleurs_des_champs.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4520185809/collier-collection-porcelaine-orne-de?ref=shop_home_active_10&logging_key=b805216d3dce71db31e6a51f4275e7999471471a%3A4520185809"
+    },
+    {
+        "id": 11,
+        "nom": "Médaillon noir orné de fleurs sechées",
+        "type": "bijoux",
+        "description": "Médaillon en inox couleur bronze délicatement orné de fleurs de 'Dentelle de la reine Anne'. Fleurs cueillies et séchées par mes soins , figées dans de la résine epoxy.",
+        "prix": "32€",
+        "image": "/images/Médaillon_noir_orné_fleurs_séchées.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4519612167/medaillon-noir-orne-de-fleurs-sechees?ref=shop_home_active_11&logging_key=5fa335e4229e3183a65bb08de70041b6e3d3a636%3A4519612167"
+    },
+    {
+        "id": 12,
+        "nom": "Encadrez votre bouquet de mariée.",
         "type": "cadre",
-        "description": "Un cadre mural circulaire mettant en valeur une composition botanique délicate et épurée.",
-        "prix": "48€",
-        "image": "/images/cadre_rond.jpg",
-        "lienEtsy": "https://www.etsy.com/fr/listing/..."
+        "description": "Que faire de mon bouquet après mon mariage ? C'est la question que se posent beaucoup de mariées ! On souhaiterait le garder frais pour toujours , ne jamais le voir faner.. Alors on le suspend pour qu'il sèche... Et prenne la poussière dans un vase en ayant perdu toutes ses couleurs. Si je vous disais qu'il existe une autre solution? Ô fleurs vous propose de récupérer votre bouquet pour le rendre éternel ! Les fleurs seront patiemment pressées, parfois restaurées si leur état le nécessite, pour être ensuite écadrées dans le cadre que vous aurez choisi.",
+        "prix": "Via devis",
+        "image": "/images/encadrez_votre_bouquet_de_mariée.jpg",
+        "lienEtsy": "https://www.etsy.com/fr/listing/4512211927/encadrez-votre-bouquet-de-mariee?ref=shop_home_active_12&frs=1&logging_key=ed7213824dfa2678502d0baac8d12d01dc024a56%3A4512211927"
     }
 ]

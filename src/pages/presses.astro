@@ -9,7 +9,7 @@ const produits = prods.filter(item => item.type == 'presse')
   <div class="grille-produits"> {produits.map((item) => (
       <div class="carte-produit"> <img src={item.image} alt={item.nom} width="220px"/> <h3>{item.nom}</h3>
         <p class="prix-produit">{item.prix}</p>
-        <a href={item.lienEtsy} target="_blank" class="btn-panier">Ajouter à votre panier</a>
+        <a href={item.lienEtsy} target="_blank" class="btn-panier">Lien vers le produit</a>
       </div>
     ))}
   </div>
