@@ -11,6 +11,7 @@ const produits = prods.filter(item => item.type === 'preservation');
         
         <h2 class="product-title">{item.nom}</h2>
 
+        <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
         <div class="product-image-vertical">
           <img src={item.image} alt={item.nom} width="100%" />
         </div>
