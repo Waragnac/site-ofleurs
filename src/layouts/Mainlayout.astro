@@ -57,16 +57,18 @@ const { title } = Astro.props;
 			<slot /> <!-- C'est ici que le contenu de chaque page s'affichera -->
 		</main>
 		<script>
-		// On récupère le header pour surveiller le scroll
-		const header = document.querySelector('header');
-		
-		window.addEventListener('scroll', () => {
-			if (window.scrollY > 40) {
-			header.classList.add('scrolled');
-			} else {
-			header.classList.remove('scrolled');
+			const header = document.querySelector('header');
+			
+			// On vérifie que le header existe bien pour rassurer TypeScript
+			if (header) {
+				window.addEventListener('scroll', () => {
+				if (window.scrollY > 50) {
+					header.classList.add('scrolled');
+				} else {
+					header.classList.remove('scrolled');
+				}
+				});
 			}
-		});
 		</script>
 	</body>
 </html>

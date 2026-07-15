@@ -52,7 +52,8 @@ import MainLayout from '../layouts/Mainlayout.astro';
   const prevBtn = document.querySelector('.prev-btn');
   let currentIndex = 0;
 
-  function showSlide(index) {
+  // CORRECTION 1 : On précise que 'index' est un nombre (: number)
+  function showSlide(index: number) {
     if (index >= slides.length) {
       currentIndex = 0;
     } else if (index < 0) {
@@ -72,9 +73,17 @@ import MainLayout from '../layouts/Mainlayout.astro';
     });
   }
 
-  nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
-  prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+  // CORRECTION 2 & 3 : On vérifie que les boutons existent bien avant d'écouter le clic
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+  }
 
+  // Les "dots" utilisent querySelectorAll (qui renvoie une liste vide si rien n'est trouvé, mais jamais null),
+  // et l'index est automatiquement typé par le forEach, donc pas d'erreur ici !
   dots.forEach((dot, index) => {
     dot.addEventListener('click', () => showSlide(index));
   });
