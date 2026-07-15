@@ -15,6 +15,32 @@ const produits = prods.filter(item => item.type === 'preservation');
           <img src={item.image} alt={item.nom} width="100%" />
         </div>
 
+        <div class="carousel-container" width="100%">
+          <!-- Flèche Gauche -->
+          <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
+
+          <!-- Zone Image Unique au Centre -->
+          <div class="carousel-display">
+          <!-- Slide 1 : Préservation -->
+          <div class="carousel-slide active">
+            <img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Préservation" />
+            <div class="slide-content">
+            <h3>Préservation de bouquets</h3>
+            <a href="/preservation" class="btn-slide">Découvrir</a>
+            </div>
+          </div>
+          <!-- Slide 2 : Bijoux -->
+          <div class="carousel-slide">
+            <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Bijoux" />
+            <div class="slide-content">
+            <h3>Bijoux Botaniques</h3>
+            <a href="/bijoux" class="btn-slide">Voir la collection</a>
+            </div>
+          </div>
+            <!--<img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Création Ô Fleurs 1" class="carousel-slide active" />
+            <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Création Ô Fleurs 2" class="carousel-slide" /> -->
+        </div>
+
         <div class="product-action-vertical">
           <a href="/contact" class="btn-panier btn-contact-vertical">
             SUR DEVIS <br /> ME CONTACTER
