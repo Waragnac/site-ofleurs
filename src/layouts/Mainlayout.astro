@@ -19,17 +19,17 @@ const { title } = Astro.props;
 				
 				<!-- Le Menu au centre -->
 				<nav>
-				<a href="/">Accueil</a>
-				<a href="/preservation">Préservation de bouquets</a>
-				<a href="/bijoux">Bijoux</a>
-				<a href="/presses">Presses à fleurs</a>
-				<a href="/cadres">Cadres</a>
-				<a href="/contact">Contact</a>
+				<a href="/" class="onglet_accueil">Accueil</a>
+				<a href="/preservation" class="onglet_preservation">Préservation de bouquets</a>
+				<a href="/bijoux" class="onglet_bijoux">Bijoux</a>
+				<!-- <a href="/presses" class="onglet_presses">Presses à fleurs</a>
+				<a href="/cadres" class="onglet_cadres">Cadres</a>-->
+				<a href="/contact" class="onglet_contact">Contact</a>
 				</nav>
 
 				<!-- La Connexion à droite -->
 				<div class="user-space">
-					<a href="/connexion" class="icon-link" title="Se connecter">
+					<!--<a href="/connexion" class="icon-link" title="Se connecter">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 							<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
 							<circle cx="12" cy="7" r="4"></circle>
@@ -41,6 +41,13 @@ const { title } = Astro.props;
 							<circle cx="20" cy="21" r="1"></circle>
 							<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
 						</svg>
+					</a>-->
+					<a href="https://www.facebook.com/people/%C3%94-fleurs/61589665918255/" class="icon-link" title="Nous suivre sur Facebook" target="_blank" rel="noopener noreferrer">
+						<img src="/images/facebook.jpeg" alt="Facebook Ô Fleurs" width="24" height="24" />
+					</a>
+					
+					<a href="https://www.instagram.com/ofleurs.creation?igsh=ZTFuMHhpNXg1cnYy" class="icon-link" title="Nous suivre sur Instagram" target="_blank" rel="noopener noreferrer">
+						<img src="/images/instagram.jpeg" alt="Instagram Ô Fleurs" width="24" height="24" />
 					</a>
 				</div>
 				
@@ -49,5 +56,18 @@ const { title } = Astro.props;
 		<main>
 			<slot /> <!-- C'est ici que le contenu de chaque page s'affichera -->
 		</main>
+		<script>
+		// On récupère le header pour surveiller le scroll
+		const header = document.querySelector('header');
+		
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 40) {
+			header.classList.add('scrolled');
+			} else {
+			header.classList.remove('scrolled');
+			}
+		});
+		</script>
 	</body>
 </html>
+

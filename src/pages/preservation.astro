@@ -1,15 +1,54 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import prods from '../data/produits.json';
-const produits = prods.filter(item => item.type == 'preservation')
+const produits = prods.filter(item => item.type === 'preservation');
 ---
+<MainLayout title="Préservations de bouquets">
+  
+  <div class="grille-produits-verticale">
+    {produits.map((item) => (
+      <div class="product-wrapper-vertical">
+        
+        <h2 class="product-title">{item.nom}</h2>
 
-<MainLayout title="Preservation">
-  <h1>Le Magasin Ô Fleurs</h1>
-  <div class="grille-produits"> {produits.map((item) => (
-      <div class="carte-produit"> <img src={item.image} alt={item.nom} width="220px"/> <h3>{item.nom}</h3>
-        <p class="prix-produit">{item.prix}</p>
-        <a href={item.lienEtsy} target="_blank" class="btn-panier">Lien vers le produit</a>
+        <div class="product-image-vertical">
+          <img src={item.image} alt={item.nom} width="100%" />
+        </div>
+
+        <div class="product-action-vertical">
+          <a href="/contact" class="btn-panier btn-contact-vertical">
+            SUR DEVIS <br /> ME CONTACTER
+          </a>
+        </div>
+
+        <div class="product-description-vertical">
+          <p><strong>Que faire de mon bouquet après mon mariage ?</strong><br/>
+          C'est la question que se posent beaucoup de mariées ! On souhaiterait le garder frais pour toujours, ne jamais le voir faner... Alors on le suspend pour qu'il sèche... Et prenne la poussière dans un vase en ayant perdu toutes ses couleurs.</p>
+
+          <p>Si je vous disais qu'il existe une autre solution ? Ô fleurs vous propose de récupérer votre bouquet pour le rendre éternel ! Les fleurs seront patiemment pressées, parfois restaurées si leur état le nécessite, pour être ensuite encadrées dans le cadre que vous aurez choisi.</p>
+          
+          <p>Le pressage est un processus qui demande du temps. Les fleurs sont sèches après 3 semaines environ. Il faut donc compter un délai d'un mois environ pour récupérer votre cadre.</p>
+          
+          <p class="warning-box"><strong>ATTENTION !</strong><br/>
+          Je ne propose pas d'envoi pour ce produit. Je récupère vos bouquets gratuitement dans un rayon de 10km autour de Rousset (13790), au-delà un supplément s'applique.</p>
+          
+          <p class="steps-title"><strong>Comment ça se passe ?</strong></p>
+
+          <p>⚘️ Contactez moi via téléphone, mail, Facebook ou Instagram pour que l'on discute de votre projet, du type de cadre à utiliser, du format, et de la date de récupération de votre bouquet.</p>
+
+          <p>⚘️ Vous souhaitez un autre type de cadre ? Un autre format ? Une personnalisation avec inclusion de photo ou faire part? Contactez moi, tout est possible 😊</p>
+
+          <p>⚘️ Le jour J, je récupère votre bouquet à un point de rdv donné.</p>
+
+          <p>⚘️ Pendant les 3 semaines suivantes, je chouchoute vos fleurs et je reviens vers vous pour vous proposer un design.</p>
+
+          <p>⚘️ 🥳 Votre cadre est prêt ! On se donne rdv pour que vous le récupériez !</p>
+
+          <p class="final-question">Vous avez des questions ? Une demande particulière ?<br/>
+          Contactez moi ! Je me ferais un plaisir de répondre à vos demandes 😊</p>
+          
+          <p class="price-notice"><em>PRIX SUR DEVIS</em></p>
+        </div>
       </div>
     ))}
   </div>

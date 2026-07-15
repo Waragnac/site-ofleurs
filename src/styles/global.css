@@ -25,9 +25,9 @@ body {
 
 body {
     /*font-family: 'Georgia', serif;*/
-    font-family: 'Lato', sans-serif;
+    font-family: 'Playfair Display', serif;
     background-color: var(--bg);
-    color: var(--text);
+    color: black;
     line-height: 1.7;
     width: 100%;
     overflow-x: hidden;
@@ -114,7 +114,7 @@ nav {
 }
 
 nav a {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', serif;
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
@@ -125,6 +125,209 @@ nav a {
 
 nav a:hover {
     color: green;
+}
+
+
+/* --- COMPORTEMENT DE FIXATION DE DÉPART --- */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+    /* Permet la transition fluide */
+}
+
+
+/* Transitions indispensables pour les éléments internes */
+
+.header-container,
+.logo,
+.logo img,
+nav {
+    transition: all 0.4s ease-in-out;
+}
+
+
+/* Décale le contenu du site vers le bas pour compenser le header qui flotte */
+
+body {
+    padding-top: 195px;
+}
+
+
+/* --- TOUS LES CHANGEMENTS UNIQUEMENT LORS DU SCROLL --- */
+
+header.scrolled {
+    padding: 0.5rem 2rem;
+    /* Réduit la hauteur générale */
+    min-height: 60px;
+}
+
+
+/* Aligne le logo et le menu sur une seule ligne */
+
+header.scrolled .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* Réduit la taille du logo */
+
+header.scrolled .logo img {
+    height: 45px;
+}
+
+
+/* Supprime la marge sous le logo devenue inutile sur une seule ligne */
+
+header.scrolled .logo {
+    margin-bottom: 0;
+}
+
+
+/* Intègre l'espace utilisateur (connexion/panier) dans l'alignement flex */
+
+header.scrolled .user-space {
+    position: static;
+    order: 3;
+}
+
+
+/* Rend la pilule du menu un peu plus compacte */
+
+header.scrolled nav {
+    padding: 0.4rem 1rem;
+    gap: 30px;
+}
+
+
+/* Container pour le contenu par-dessus l'image */
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    text-align: center;
+    pointer-events: none;
+    /* Laisse le clic passer à travers pour le lien */
+}
+
+.slide-content h3 {
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+
+/* Le lien stylisé en bouton */
+
+.btn-slide {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    pointer-events: auto;
+    /* Permet de cliquer sur le lien */
+    transition: transform 0.2s;
+}
+
+.btn-slide:hover {
+    transform: scale(1.05);
+}
+
+
+/* Ajustement pour que le lien et le texte soient bien visibles */
+
+
+/* Le container de l'image */
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Centre l'image verticalement */
+    /* Un blanc cassé très léger pour combler les vides */
+    /* 1. AJOUT : On cache la slide pour la souris et le navigateur */
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+
+/* L'image elle-même */
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    /* Important : laisse l'image garder sa largeur naturelle */
+    height: auto;
+    /* Important : laisse l'image garder sa hauteur naturelle */
+    object-fit: contain;
+    /* L'image s'ajuste pour entrer entièrement dans le cadre */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* On garde le texte bien lisible par-dessus */
+
+.slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+    text-align: center;
+    pointer-events: none;
+}
+
+.slide-content h3 {
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    /* Texte en blanc pour le contraste */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* Ajoute une ombre portée pour la lisibilité */
+}
+
+
+/* On s'assure que le bouton reste bien visible */
+
+.btn-slide {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    /* Utilise ton vert principal */
+    color: white;
+    /* Texte du bouton en blanc */
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    pointer-events: auto;
+    border: 2px solid white;
+    /* Ajoute une bordure blanche pour le faire ressortir */
+    transition: transform 0.2s;
 }
 
 
@@ -404,6 +607,16 @@ nav a:hover {
 }
 
 
+/* Style pour rendre l'astérisque bien visible */
+
+label::after {
+    content: " *";
+    color: var(--accent);
+    /* Utilise ton doré, ou remplace par 'red' pour un rouge classique */
+    font-weight: bold;
+}
+
+
 /* --- RESPONSIVE (MOBILES) --- */
 
 @media (max-width: 768px) {
@@ -416,5 +629,348 @@ nav a:hover {
         flex-direction: column;
         /* Prénom et nom l'un sous l'autre sur mobile */
         gap: 1.2rem;
+    }
+}
+
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 50% image, 50% texte */
+    gap: 40px;
+    /* Espace entre l'image et le texte */
+    max-width: 1000px;
+    margin: 40px auto;
+    align-items: start;
+    /* Aligne tout en haut */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    /* Texte aligné à gauche comme sur Etsy */
+}
+
+.product-details h1 {
+    margin-bottom: 0;
+    text-align: left;
+    /* Annule le centrage global */
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* On s'assure que le bouton prend la largeur de sa colonne */
+
+.btn-panier {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+
+/* Container principal vertical */
+
+.grille-produits-verticale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.product-wrapper-vertical {
+    max-width: 750px;
+    /* Largeur idéale pour une lecture confortable */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Tout le texte introductif est centré */
+}
+
+
+/* Le Titre */
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* L'Image */
+
+.product-image-vertical {
+    width: 100%;
+    max-width: 550px;
+    /* Évite que la photo ne soit trop gigantesque */
+    margin-bottom: 2rem;
+}
+
+.product-image-vertical img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Le Bouton de contact */
+
+.product-action-vertical {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.btn-contact-vertical {
+    display: inline-block;
+    min-width: 280px;
+    padding: 1rem 2rem;
+    line-height: 1.4;
+    /* Permet un retour à la ligne propre */
+    border-radius: 30px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* La Description */
+
+.product-description-vertical {
+    text-align: left;
+    /* On repasse à gauche pour le confort de lecture du grand texte */
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.product-description-vertical p {
+    margin-bottom: 1.5rem;
+}
+
+
+/* Mise en valeur de l'encadré d'attention */
+
+.warning-box {
+    background-color: #fff8f6;
+    /* Rose/rouge très doux */
+    border-left: 4px solid #e07a5f;
+    padding: 1.2rem;
+    border-radius: 4px;
+}
+
+.steps-title {
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin-top: 2rem;
+}
+
+.final-question {
+    text-align: center;
+    font-style: italic;
+    margin-top: 2rem;
+}
+
+.price-notice {
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+
+/* 1. On élargit le conteneur global de 750px à 1100px */
+
+.product-wrapper-vertical {
+    max-width: 1100px;
+    /* Plus grand pour occuper l'espace (aligné sur ton formulaire de contact) */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* 2. On augmente la taille maximale de l'image de 550px à 850px */
+
+.product-image-vertical {
+    width: 100%;
+    max-width: 850px;
+    /* L'image prendra beaucoup plus de place à l'écran */
+    margin-bottom: 2rem;
+}
+
+
+/* 3. Le texte va automatiquement s'adapter et occuper toute la nouvelle largeur (1100px) */
+
+.product-description-vertical {
+    width: 100%;
+    /* S'assure que le texte utilise tout l'espace disponible */
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    /* On grossit un poil le texte pour que ce soit agréable sur une grande largeur */
+}
+
+
+/* --- LE CARROUSEL CENTRÉ --- */
+
+.home-carousel-section {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    /* Espace entre les flèches et l'image */
+    width: 100%;
+}
+
+
+/* Zone d'affichage de l'image centrale */
+
+.carousel-display {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    /* Ajuste cette valeur pour agrandir ou rétrécir l'image */
+    height: 450px;
+    /* Hauteur fixe pour éviter les sauts de page */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(74, 93, 78, 0.08);
+    border: 1px solid #e9edc9;
+    background: #fff;
+}
+
+
+/* Positionnement absolu de toutes les images pour qu'elles se superposent */
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+
+/* Affichage uniquement de la slide active */
+
+.carousel-slide.active {
+    opacity: 1;
+    /* 2. AJOUT : On réactive la slide quand elle devient visible */
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* Flèches de navigation */
+
+.carousel-arrow {
+    background: var(--primary);
+    /* Ton vert */
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    /* Empêche les flèches de s'écraser */
+}
+
+.carousel-arrow:hover {
+    background: var(--accent);
+    /* Devient doré au survol */
+    transform: scale(1.1);
+}
+
+
+/* Points de navigation en bas (Dots) */
+
+.carousel-indicators {
+    display: flex;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    background: #ccd5ae;
+    /* Vert très clair */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+
+/* Adaptation sur écrans mobiles */
+
+@media (max-width: 768px) {
+    .carousel-container {
+        gap: 10px;
+    }
+    .carousel-display {
+        height: 280px;
+    }
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
     }
 }

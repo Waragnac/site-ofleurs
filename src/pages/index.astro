@@ -4,4 +4,79 @@ import MainLayout from '../layouts/MainLayout.astro';
 <MainLayout title="Accueil">
 	<h1>Bienvenue chez Ô Fleurs</h1>
 	<p>La poésie de la nature sauvage, immortalisée en bijoux et créations botaniques.</p>
+<section class="home-carousel-section">
+  <h2 class="section-title">Nos Créations</h2>
+
+  <div class="carousel-container">
+    <!-- Flèche Gauche -->
+    <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
+
+    <!-- Zone Image Unique au Centre -->
+    <div class="carousel-display">
+		<!-- Slide 1 : Préservation -->
+		<div class="carousel-slide active">
+			<img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Préservation" />
+			<div class="slide-content">
+			<h3>Préservation de bouquets</h3>
+			<a href="/preservation" class="btn-slide">Découvrir</a>
+			</div>
+		</div>
+		<!-- Slide 2 : Bijoux -->
+		<div class="carousel-slide">
+			<img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Bijoux" />
+			<div class="slide-content">
+			<h3>Bijoux Botaniques</h3>
+			<a href="/bijoux" class="btn-slide">Voir la collection</a>
+			</div>
+		</div>
+      <!--<img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Création Ô Fleurs 1" class="carousel-slide active" />
+      <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Création Ô Fleurs 2" class="carousel-slide" /> -->
+    </div>
+
+    <!-- Flèche Droite -->
+    <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
+  </div>
+
+  <!-- Points de repère en dessous -->
+  <div class="carousel-indicators">
+    <span class="indicator-dot active"></span>
+    <span class="indicator-dot"></span>
+  </div>
+</section>
+
+<!-- SCRIPT DE DÉFILEMENT SIMPLE -->
+<script>
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.indicator-dot');
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    if (index >= slides.length) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = slides.length - 1;
+    } else {
+      currentIndex = index;
+    }
+
+    // On change l'image active
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === currentIndex);
+    });
+
+    // On change le point actif
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+  prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+  });
+</script>
 </MainLayout>

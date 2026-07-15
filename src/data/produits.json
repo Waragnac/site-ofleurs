@@ -100,9 +100,9 @@
     {
         "id": 12,
         "nom": "Encadrez votre bouquet de mariée.",
-        "type": "cadre",
+        "type": "preservation",
         "description": "Que faire de mon bouquet après mon mariage ? C'est la question que se posent beaucoup de mariées ! On souhaiterait le garder frais pour toujours , ne jamais le voir faner.. Alors on le suspend pour qu'il sèche... Et prenne la poussière dans un vase en ayant perdu toutes ses couleurs. Si je vous disais qu'il existe une autre solution? Ô fleurs vous propose de récupérer votre bouquet pour le rendre éternel ! Les fleurs seront patiemment pressées, parfois restaurées si leur état le nécessite, pour être ensuite écadrées dans le cadre que vous aurez choisi.",
-        "prix": "Via devis",
+        "prix": "Sur devis",
         "image": "/images/encadrez_votre_bouquet_de_mariée.jpg",
         "lienEtsy": "https://www.etsy.com/fr/listing/4512211927/encadrez-votre-bouquet-de-mariee?ref=shop_home_active_12&frs=1&logging_key=ed7213824dfa2678502d0baac8d12d01dc024a56%3A4512211927"
     }
