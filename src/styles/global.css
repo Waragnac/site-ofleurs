@@ -941,6 +941,17 @@ label::after {
     margin-top: 1.5rem;
 }
 
+
+/* S'assure que l'image prend toute sa place dans le carrousel */
+
+.carousel-container .carousel-display {
+    flex: 1;
+    /* Force le conteneur à prendre tout l'espace entre les flèches */
+    width: 100%;
+    min-width: 0;
+    /* Empêche le bug de compression flexbox */
+}
+
 .indicator-dot {
     width: 12px;
     height: 12px;
