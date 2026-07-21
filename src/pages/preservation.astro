@@ -11,25 +11,26 @@ const produits = prods;
         
         <h2 class="product-title">{item.nom}</h2>
 
-        <!-- LE CARROUSEL -->
-        <div class="carousel-container-preservation" data-carousel>
-          <div class="product-image-vertical-wrapper">
+        <!-- CARROUSEL : Reprise exacte des classes de la page d'accueil -->
+        <div class="carousel-container" data-carousel>
+          
+          <div class="carousel-display">
             {item.images && item.images.map((img, idx) => (
-              <div class={`carousel-slide-preservation ${idx === 0 ? 'active' : ''}`}>
+              <div class={`carousel-slide ${idx === 0 ? 'active' : ''}`}>
                 <img src={img} alt={item.nom} loading="lazy" />
               </div>
             ))}
           </div>
           
-          {/* On affiche les flèches et puces seulement s'il y a plus d'une photo */}
+          {/* Flèches et indicateurs (uniquement si plus d'une photo) */}
           {item.images && item.images.length > 1 && (
             <>
               <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
               <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
 
-              <div class="carousel-dots">
+              <div class="carousel-indicators">
                 {item.images.map((_, idx) => (
-                  <span class={`dot ${idx === 0 ? 'active' : ''}`} data-index={idx}></span>
+                  <span class={`indicator-dot ${idx === 0 ? 'active' : ''}`} data-index={idx}></span>
                 ))}
               </div>
             </>
@@ -76,13 +77,14 @@ const produits = prods;
 </MainLayout>
 
 <script>
+  // On cible uniquement les carrousels de la page via [data-carousel]
   const carousels = document.querySelectorAll('[data-carousel]');
 
   carousels.forEach((carousel) => {
-    const slides = carousel.querySelectorAll('.carousel-slide-preservation');
+    const slides = carousel.querySelectorAll('.carousel-slide');
     const nextBtn = carousel.querySelector('.next-btn');
     const prevBtn = carousel.querySelector('.prev-btn');
-    const dots = carousel.querySelectorAll('.dot');
+    const dots = carousel.querySelectorAll('.indicator-dot');
     let currentIndex = 0;
 
     if (slides.length <= 1) return;
@@ -96,12 +98,12 @@ const produits = prods;
         currentIndex = index;
       }
 
-      // Changement de la slide active
+      // Active la bonne image
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentIndex);
       });
 
-      // Changement du point actif
+      // Active le bon point
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
@@ -110,7 +112,6 @@ const produits = prods;
     if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
     if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
 
-    // Clic sur les points
     dots.forEach((dot) => {
       dot.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
