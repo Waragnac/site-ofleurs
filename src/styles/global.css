@@ -275,8 +275,6 @@ header.scrolled nav {
 /* L'image elle-même */
 
 .carousel-slide img {
-    /*max-width: 100%;
-    max-height: 100%;*/
     width: 100%;
     /* Important : laisse l'image garder sa largeur naturelle */
     height: auto;
@@ -847,7 +845,7 @@ label::after {
 /* --- LE CARROUSEL CENTRÉ --- */
 
 .home-carousel-section {
-    max-width: 100%;
+    width: 100%;
     margin: 4rem auto;
     padding: 0 1rem;
     display: flex;
