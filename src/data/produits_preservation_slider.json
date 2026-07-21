@@ -1,4 +1,4 @@
-{
+[{
     "id": "bouquet-preservation",
     "type": "preservation",
     "nom": "Encadrement de bouquet",
@@ -9,4 +9,4 @@
         "/images/preservation_4.jpg",
         "/images/preservation_5.jpg"
     ]
-}
+}]
