@@ -1,0 +1,12 @@
+{
+    "id": "bouquet-preservation",
+    "type": "preservation",
+    "nom": "Encadrement de bouquet",
+    "images": [
+        "/images/encadrez_votre_bouquet_de_mariée.jpg",
+        "/images/preservation_2.jpg",
+        "/images/preservation_3.jpg",
+        "/images/preservation_4.jpg",
+        "/images/preservation_5.jpg"
+    ]
+}

@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../layouts/Mainlayout.astro';
-import prods from '../data/produits_preservation_slider.json';
-const produits = prods;
+import prods from '../data/produits.json';
+const produits = prods.filter(item => item.type === 'preservation');
 ---
 <MainLayout title="Préservations de bouquets">
   
@@ -11,21 +11,11 @@ const produits = prods;
         
         <h2 class="product-title">{item.nom}</h2>
 
-        <div class="carousel-container-preservation" data-carousel>
-          <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
-          
-          <div class="product-image-vertical-wrapper">
-            {item.images && item.images.map((img, idx) => (
-              // La première image reçoit la classe 'active' par défaut
-              <div class={`carousel-slide-preservation ${idx === 0 ? 'active' : ''}`}>
-                <img src={img} alt={item.nom} />
-              </div>
-            ))}
-          </div>
-          
-          <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
+
+        <div class="product-image-vertical">
+          <img src={item.image} alt={item.nom} width="100%" />
         </div>
-        
+
         <div class="product-action-vertical">
           <a href="/contact" class="btn-panier btn-contact-vertical">
             SUR DEVIS <br /> ME CONTACTER
@@ -64,44 +54,3 @@ const produits = prods;
     ))}
   </div>
 </MainLayout>
-
-<script>
-  // On récupère TOUS les conteneurs de carrousel de la page
-  const carousels = document.querySelectorAll('[data-carousel]');
-
-  carousels.forEach((carousel) => {
-    // Pour CHAQUE carrousel, on cherche ses propres boutons et ses propres images
-    const slides = carousel.querySelectorAll('.carousel-slide-preservation');
-    const nextBtn = carousel.querySelector('.next-btn');
-    const prevBtn = carousel.querySelector('.prev-btn');
-    let currentIndex = 0;
-
-    // S'il n'y a qu'une seule image (ou aucune), on cache les flèches inutiles
-    if (slides.length <= 1) {
-      if (nextBtn) (nextBtn as HTMLElement).style.display = 'none';
-      if (prevBtn) (prevBtn as HTMLElement).style.display = 'none';
-      return;
-    }
-
-    function showSlide(index: number) {
-      if (index >= slides.length) {
-        currentIndex = 0;
-      } else if (index < 0) {
-        currentIndex = slides.length - 1;
-      } else {
-        currentIndex = index;
-      }
-
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentIndex);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
-    }
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-    }
-  });
-</script>
