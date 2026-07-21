@@ -862,6 +862,7 @@ label::after {
     gap: 30px;
     /* Espace entre les flèches et l'image */
     width: 100%;
+    min-width: 100%;
 }
 
 
