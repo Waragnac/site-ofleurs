@@ -806,15 +806,15 @@ label::after {
 
 /* 1. On élargit le conteneur global de 750px à 1100px */
 
-.product-wrapper-vertical {
+
+/*.product-wrapper-vertical {
     max-width: 1100px;
-    /* Plus grand pour occuper l'espace (aligné sur ton formulaire de contact) */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+}*/
 
 
 /* 2. On augmente la taille maximale de l'image de 550px à 850px */
