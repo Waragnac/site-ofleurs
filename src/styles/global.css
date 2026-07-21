@@ -1007,11 +1007,11 @@ label::after {
 }
 
 .footer-links a {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', serif;
     /* Utilise la police dominante du site */
     font-style: italic;
     /* Donne le petit côté courbé/élégant de ton image */
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     color: #2c3e35;
     /* Vert/Gris foncé élégant */
     text-decoration: none;
