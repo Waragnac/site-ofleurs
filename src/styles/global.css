@@ -697,7 +697,6 @@ label::after {
 }
 
 .product-wrapper-vertical {
-    max-width: 750px;
     /* Largeur idéale pour une lecture confortable */
     width: 100%;
     display: flex;
