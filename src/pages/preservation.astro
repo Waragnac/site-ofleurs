@@ -11,19 +11,29 @@ const produits = prods;
         
         <h2 class="product-title">{item.nom}</h2>
 
+        <!-- LE CARROUSEL -->
         <div class="carousel-container-preservation" data-carousel>
-          <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
-          
           <div class="product-image-vertical-wrapper">
             {item.images && item.images.map((img, idx) => (
-              // La première image reçoit la classe 'active' par défaut
               <div class={`carousel-slide-preservation ${idx === 0 ? 'active' : ''}`}>
-                <img src={img} alt={item.nom} />
+                <img src={img} alt={item.nom} loading="lazy" />
               </div>
             ))}
           </div>
           
-          <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
+          {/* On affiche les flèches et puces seulement s'il y a plus d'une photo */}
+          {item.images && item.images.length > 1 && (
+            <>
+              <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
+              <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
+
+              <div class="carousel-dots">
+                {item.images.map((_, idx) => (
+                  <span class={`dot ${idx === 0 ? 'active' : ''}`} data-index={idx}></span>
+                ))}
+              </div>
+            </>
+          )}
         </div>
         
         <div class="product-action-vertical">
@@ -66,22 +76,16 @@ const produits = prods;
 </MainLayout>
 
 <script>
-  // On récupère TOUS les conteneurs de carrousel de la page
   const carousels = document.querySelectorAll('[data-carousel]');
 
   carousels.forEach((carousel) => {
-    // Pour CHAQUE carrousel, on cherche ses propres boutons et ses propres images
     const slides = carousel.querySelectorAll('.carousel-slide-preservation');
     const nextBtn = carousel.querySelector('.next-btn');
     const prevBtn = carousel.querySelector('.prev-btn');
+    const dots = carousel.querySelectorAll('.dot');
     let currentIndex = 0;
 
-    // S'il n'y a qu'une seule image (ou aucune), on cache les flèches inutiles
-    if (slides.length <= 1) {
-      if (nextBtn) (nextBtn as HTMLElement).style.display = 'none';
-      if (prevBtn) (prevBtn as HTMLElement).style.display = 'none';
-      return;
-    }
+    if (slides.length <= 1) return;
 
     function showSlide(index: number) {
       if (index >= slides.length) {
@@ -92,16 +96,27 @@ const produits = prods;
         currentIndex = index;
       }
 
+      // Changement de la slide active
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === currentIndex);
       });
+
+      // Changement du point actif
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
     }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
-    }
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-    }
+    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+
+    // Clic sur les points
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const idx = parseInt(target.dataset.index || '0');
+        showSlide(idx);
+      });
+    });
   });
 </script>
