@@ -11,32 +11,27 @@ const produits = prods;
         
         <h2 class="product-title">{item.nom}</h2>
 
-        <!-- BLOC CARROUSEL : Exactement la même structure que l'accueil -->
-        <div class="carousel-block" data-carousel>
+        <!-- STRUCTURE EXACTE DE INDEX.ASTRO -->
+        <section class="home-carousel-section" data-carousel>
           <div class="carousel-container">
             
-            {/* 1. Flèche Gauche */}
-            {item.images && item.images.length > 1 && (
-              <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
-            )}
+            <!-- Flèche Gauche -->
+            <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
 
-            {/* 2. Image au centre */}
+            <!-- Zone Image Unique au Centre -->
             <div class="carousel-display">
               {item.images && item.images.map((img, idx) => (
                 <div class={`carousel-slide ${idx === 0 ? 'active' : ''}`}>
-                  <img src={img} alt={item.nom} loading="lazy" />
+                  <img src={img} alt={item.nom} />
                 </div>
               ))}
             </div>
-            
-            {/* 3. Flèche Droite */}
-            {item.images && item.images.length > 1 && (
-              <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
-            )}
 
+            <!-- Flèche Droite -->
+            <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
           </div>
 
-          {/* 4. Indicateurs / Puces placés SOUS le conteneur */}
+          <!-- Points de repère en dessous (hors de carousel-container) -->
           {item.images && item.images.length > 1 && (
             <div class="carousel-indicators">
               {item.images.map((_, idx) => (
@@ -44,7 +39,7 @@ const produits = prods;
               ))}
             </div>
           )}
-        </div>
+        </section>
         
         <div class="product-action-vertical">
           <a href="/contact" class="btn-panier btn-contact-vertical">
@@ -86,6 +81,7 @@ const produits = prods;
 </MainLayout>
 
 <script>
+  // Script adapté aux sélecteurs d'index.astro + gestion multi-carrousels
   const carousels = document.querySelectorAll('[data-carousel]');
 
   carousels.forEach((carousel) => {
