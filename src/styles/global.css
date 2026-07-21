@@ -870,7 +870,7 @@ label::after {
 .carousel-display {
     position: relative;
     width: 100%;
-    max-width: 750px;
+    /*max-width: 750px;*/
     /* Ajuste cette valeur pour agrandir ou rétrécir l'image */
     height: 450px;
     /* Hauteur fixe pour éviter les sauts de page */
