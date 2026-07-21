@@ -859,7 +859,7 @@ label::after {
     justify-content: center;
     gap: 30px;
     /* Espace entre les flèches et l'image */
-    width: 100%;
+    width: 90%;
 }
 
 
@@ -970,5 +970,110 @@ label::after {
         width: 40px;
         height: 40px;
         font-size: 1.1rem;
+    }
+}
+
+
+/* FOOTER / EN-TETE */
+
+
+/* --- LE FOOTER --- */
+
+.site-footer {
+    width: 100%;
+    /* Dégradé doux aux tons naturels du site ou fond très léger */
+    background: linear-gradient(180deg, rgba(252, 252, 252, 0) 0%, #f4f6ed 100%);
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+
+/* Liens du haut */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-links a {
+    font-family: 'Playfair Display', serif;
+    /* Utilise la police dominante du site */
+    font-style: italic;
+    /* Donne le petit côté courbé/élégant de ton image */
+    font-size: 1.05rem;
+    color: #2c3e35;
+    /* Vert/Gris foncé élégant */
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #556b2f;
+    /* Devient plus soutenu au survol */
+    transform: translateY(-1px);
+}
+
+
+/* Icônes Réseaux Sociaux */
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: #2c3e35;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-socials a:hover {
+    color: #556b2f;
+    transform: scale(1.15);
+}
+
+
+/* Ligne de séparation discrète */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(44, 62, 53, 0.15);
+    /* Trait très fin */
+    margin: 0.5rem 0;
+}
+
+
+/* Copyright du bas */
+
+.footer-copyright {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #2c3e35;
+    opacity: 0.85;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Responsive pour mobile */
+
+@media (max-width: 600px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 }
