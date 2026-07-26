@@ -1088,3 +1088,40 @@ label::after {
         gap: 1rem;
     }
 }
+
+
+/* --- AMÉNAGEMENT DU TEXTE DE PRÉSENTATION --- */
+
+.about-description {
+    max-width: 780px;
+    /* Restreint la largeur pour une lecture fluide */
+    margin: 3rem auto;
+    /* Centre tout le bloc sur la page */
+    padding: 0 2rem;
+    /* Crée une marge interne de sécurité sur les côtés */
+}
+
+
+/* Centrer le titre d'accroche */
+
+.about-description .steps-title {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Centrer le bloc "Douceur & Poésie" */
+
+.about-description .poetic-box {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+
+/* Centrer la phrase de conclusion */
+
+.about-description .final-question {
+    text-align: center;
+    margin-top: 2.5rem;
+}
