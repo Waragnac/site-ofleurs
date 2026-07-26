@@ -1127,7 +1127,7 @@ label::after {
 }
 
 .about-photo-wrapper {
-    width: 100%;
+    width: 900px;
     margin-top: 2.5rem;
     /* Crée un bel espace avec le texte du dessus */
     overflow: hidden;
@@ -1138,7 +1138,7 @@ label::after {
 }
 
 .about-photo-wrapper img {
-    width: 100%;
+    width: 900px;
     height: auto;
     display: block;
     object-fit: cover;
