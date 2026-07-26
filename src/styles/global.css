@@ -1093,7 +1093,7 @@ label::after {
 /* --- AMÉNAGEMENT DU TEXTE DE PRÉSENTATION --- */
 
 .about-description {
-    max-width: 780px;
+    max-width: 900px;
     /* Restreint la largeur pour une lecture fluide */
     margin: 3rem auto;
     /* Centre tout le bloc sur la page */
@@ -1124,4 +1124,22 @@ label::after {
 .about-description .final-question {
     text-align: center;
     margin-top: 2.5rem;
+}
+
+.about-photo-wrapper {
+    width: 100%;
+    margin-top: 2.5rem;
+    /* Crée un bel espace avec le texte du dessus */
+    overflow: hidden;
+    border-radius: 16px;
+    /* Coins arrondis identiques à ton carrousel */
+    box-shadow: 0 8px 25px rgba(44, 62, 53, 0.05);
+    /* Ombre très douce */
+}
+
+.about-photo-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
