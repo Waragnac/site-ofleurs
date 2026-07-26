@@ -1138,7 +1138,7 @@ label::after {
 }
 
 .about-photo-wrapper img {
-    width: 100%;
+    width: 900px;
     height: auto;
     display: block;
     object-fit: cover;
