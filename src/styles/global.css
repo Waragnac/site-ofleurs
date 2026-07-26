@@ -1126,19 +1126,19 @@ label::after {
     margin-top: 2.5rem;
 }
 
-.about-photo-wrapper {
-    width: 900px;
-    margin-top: 2.5rem;
-    /* Crée un bel espace avec le texte du dessus */
+.about-image-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 2.5rem auto !important;
+    /* Le "auto" sur les côtés force le centrage parfait */
+    display: block;
     overflow: hidden;
     border-radius: 16px;
-    /* Coins arrondis identiques à ton carrousel */
-    box-shadow: 0 8px 25px rgba(44, 62, 53, 0.05);
-    /* Ombre très douce */
+    /* Pour conserver les jolis coins arrondis du site */
 }
 
 .about-photo-wrapper img {
-    width: 900px;
+    width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
