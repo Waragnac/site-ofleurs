@@ -1143,3 +1143,172 @@ label::after {
     display: block;
     object-fit: cover;
 }
+
+
+/* --- BARRE DE FILTRES Ô FLEURS (CENTRÉE) --- */
+
+.ofleurs-filter-bar {
+    display: flex;
+    justify-content: center;
+    /* Centrage sur la page */
+    align-items: center;
+    padding: 1rem 0.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #e9edc9;
+    font-family: 'Playfair Display', serif;
+    color: #2c3e35;
+}
+
+.filter-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-title {
+    font-style: italic;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+
+/* Boutons déroulants */
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: #2c3e35;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f4f6ed;
+}
+
+
+/* Popups sous les boutons */
+
+.filter-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    /* Popups centrées sous leur bouton respectif */
+    width: 270px;
+    background: #ffffff;
+    border: 1px solid #e9edc9;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    padding: 1.2rem;
+    z-index: 100;
+}
+
+.filter-popup.open {
+    display: block;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -5px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+/* En-tête des popups */
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-style: italic;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.reset-btn {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: #2c3e35;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    opacity: 0.7;
+}
+
+.reset-btn:hover {
+    opacity: 1;
+}
+
+
+/* Checkboxes */
+
+.popup-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.9rem;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    accent-color: #2c3e35;
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Champs Prix */
+
+.price-range {
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.price-input-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    background: #fbfbfa;
+}
+
+.price-input-box input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+    padding-left: 0.3rem;
+}

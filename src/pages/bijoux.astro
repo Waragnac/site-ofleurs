@@ -1,15 +1,174 @@
 ---
 import MainLayout from '../layouts/Mainlayout.astro';
 import prods from '../data/produits.json';
-const produits = prods.filter(item => item.type == 'bijoux')
+const produits = prods.filter(item => item.type == 'bijoux');
 ---
 <MainLayout title="Bijoux">
   <h1>Bijoux et collections</h1>
-  <div class="grille-produits"> {produits.map((item) => (
-      <div class="carte-produit"> <img src={item.image} alt={item.nom} width="220px"/> <h3>{item.nom}</h3>
-        <p class="prix-produit">{item.prix}</p>
+
+  <!-- BARRE DE FILTRES -->
+  <div class="ofleurs-filter-bar">
+    <div class="filter-center">
+      <span class="filter-title">Filtre :</span>
+
+      <!-- Filtre Disponibilité -->
+      <div class="filter-dropdown">
+        <button type="button" class="filter-btn" data-toggle="stock">
+          Disponibilité <span class="arrow">▾</span>
+        </button>
+
+        <div class="filter-popup" id="popup-stock">
+          <div class="popup-header">
+            <span id="stock-selected-text">0 sélectionné</span>
+            <button type="button" class="reset-btn" id="reset-stock">Réinitialiser</button>
+          </div>
+          <div class="popup-body">
+            <label class="custom-checkbox">
+              <input type="checkbox" value="true" class="stock-checkbox" />
+              <span class="checkmark"></span>
+              En stock (<span id="count-in-stock">0</span>)
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="false" class="stock-checkbox" />
+              <span class="checkmark"></span>
+              En rupture de stock (<span id="count-out-stock">0</span>)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtre Prix -->
+      <div class="filter-dropdown">
+        <button type="button" class="filter-btn" data-toggle="price">
+          Prix <span class="arrow">▾</span>
+        </button>
+
+        <div class="filter-popup" id="popup-price">
+          <div class="popup-header">
+            <span>Prix max : <strong id="max-price-label">-- €</strong></span>
+            <button type="button" class="reset-btn" id="reset-price">Réinitialiser</button>
+          </div>
+          <div class="popup-body price-range">
+            <div class="price-input-box">
+              <span class="currency">€</span>
+              <input type="number" id="min-price" placeholder="De" min="0" />
+            </div>
+            <div class="price-input-box">
+              <span class="currency">€</span>
+              <input type="number" id="max-price" placeholder="À" min="0" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GRILLE PRODUITS -->
+  <div class="grille-produits">
+    {produits.map((item) => (
+      <div 
+        class="carte-produit product-card" 
+        data-price={item.prix} 
+        data-stock={item.enStock !== false ? "true" : "false"}
+      >
+        <img src={item.image} alt={item.nom} width="220px"/>
+        <h3>{item.nom}</h3>
+        <p class="prix-produit">{item.prix} €</p>
         <a href={item.lienEtsy} target="_blank" class="btn-panier">Lien vers le produit</a>
       </div>
     ))}
   </div>
+
 </MainLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('[data-toggle]');
+    const popups = document.querySelectorAll('.filter-popup');
+    const stockCheckboxes = document.querySelectorAll('.stock-checkbox') as NodeListOf<HTMLInputElement>;
+    const minPriceInput = document.getElementById('min-price') as HTMLInputElement;
+    const maxPriceInput = document.getElementById('max-price') as HTMLInputElement;
+    
+    const countInStockEl = document.getElementById('count-in-stock');
+    const countOutStockEl = document.getElementById('count-out-stock');
+    const maxPriceLabel = document.getElementById('max-price-label');
+    const stockSelectedText = document.getElementById('stock-selected-text');
+
+    const productCards = Array.from(document.querySelectorAll('.product-card')) as HTMLElement[];
+
+    if (!productCards.length) return;
+
+    let maxPriceFound = 0;
+    let inStockCount = 0;
+    let outOfStockCount = 0;
+
+    productCards.forEach(card => {
+      const priceVal = parseFloat((card.dataset.price || '0').replace(/[^0-9.-]+/g, ''));
+      const isStock = card.dataset.stock === 'true';
+
+      if (priceVal > maxPriceFound) maxPriceFound = priceVal;
+      if (isStock) inStockCount++; else outOfStockCount++;
+    });
+
+    if (maxPriceLabel) maxPriceLabel.textContent = `${maxPriceFound} €`;
+    if (countInStockEl) countInStockEl.textContent = `${inStockCount}`;
+    if (countOutStockEl) countOutStockEl.textContent = `${outOfStockCount}`;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = `popup-${btn.getAttribute('data-toggle')}`;
+        popups.forEach(p => {
+          if (p.id === targetId) p.classList.toggle('open');
+          else p.classList.remove('open');
+        });
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!(e.target as HTMLElement).closest('.filter-dropdown')) {
+        popups.forEach(p => p.classList.remove('open'));
+      }
+    });
+
+    function updateProducts() {
+      const selectedStocks = Array.from(stockCheckboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+
+      if (stockSelectedText) {
+        stockSelectedText.textContent = `${selectedStocks.length} sélectionné(s)`;
+      }
+
+      const minP = parseFloat(minPriceInput?.value || '0');
+      const maxP = parseFloat(maxPriceInput?.value || '999999');
+
+      productCards.forEach(card => {
+        const rawPrice = card.dataset.price || '0';
+        const price = parseFloat(rawPrice.replace(/[^0-9.-]+/g, ''));
+        const stock = card.dataset.stock || 'false';
+
+        const matchStock = selectedStocks.length === 0 || selectedStocks.includes(stock);
+        const matchPrice = price >= minP && price <= maxP;
+
+        card.style.display = (matchStock && matchPrice) ? '' : 'none';
+      });
+    }
+
+    stockCheckboxes.forEach(cb => cb.addEventListener('change', updateProducts));
+    minPriceInput?.addEventListener('input', updateProducts);
+    maxPriceInput?.addEventListener('input', updateProducts);
+
+    document.getElementById('reset-stock')?.addEventListener('click', () => {
+      stockCheckboxes.forEach(cb => cb.checked = false);
+      updateProducts();
+    });
+
+    document.getElementById('reset-price')?.addEventListener('click', () => {
+      if (minPriceInput) minPriceInput.value = '';
+      if (maxPriceInput) maxPriceInput.value = '';
+      updateProducts();
+    });
+  });
+</script>
