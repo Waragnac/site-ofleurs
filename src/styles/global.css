@@ -171,7 +171,11 @@ header.scrolled {
 
 header.scrolled .header-container {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    /* Centre le contenu au lieu de l'écarter */
+    align-items: center;
+    gap: 2rem;
+    /* Espace souhaité entre le logo et le menu */
 }
 
 
@@ -843,7 +847,7 @@ label::after {
 /* --- LE CARROUSEL CENTRÉ --- */
 
 .home-carousel-section {
-    width: 100%;
+    width: 90%;
     margin: 4rem auto;
     padding: 0 1rem;
     display: flex;
