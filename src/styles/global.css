@@ -1069,7 +1069,7 @@ label::after {
 
 .press-photo-wrapper img {
     width: 100%;
-    max-width: 650px;
+    max-width: 450px;
     /* Taille idéale pour s'insérer harmonieusement au milieu du texte */
     max-height: 600px;
     height: auto;
