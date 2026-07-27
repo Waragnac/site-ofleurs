@@ -1059,6 +1059,36 @@ label::after {
 }
 
 
+/* --- PHOTO PRESSE ET SA LÉGENDE --- */
+
+.press-photo-wrapper {
+    margin: 2rem auto;
+    text-align: center;
+    width: 100%;
+}
+
+.press-photo-wrapper img {
+    width: 100%;
+    max-width: 650px;
+    /* Taille idéale pour s'insérer harmonieusement au milieu du texte */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: block;
+    margin: 0 auto;
+}
+
+.press-photo-wrapper figcaption {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #2c3e35;
+    opacity: 0.85;
+    margin-top: 0.8rem;
+    line-height: 1.4;
+}
+
+
 /* Adaptation sur écrans mobiles */
 
 @media (max-width: 768px) {
