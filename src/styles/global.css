@@ -1071,7 +1071,7 @@ label::after {
     width: 100%;
     max-width: 650px;
     /* Taille idéale pour s'insérer harmonieusement au milieu du texte */
-    max-height: 400px;
+    max-height: 600px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
