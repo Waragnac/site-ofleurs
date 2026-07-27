@@ -2,114 +2,56 @@
 import MainLayout from '../layouts/Mainlayout.astro';
 ---
 <MainLayout title="Accueil">
-	<h1>Bienvenue chez Ô Fleurs</h1>
-	<p>La poésie de la nature sauvage, immortalisée en bijoux et créations botaniques.</p>
-<section class="home-carousel-section">
-  <h2 class="section-title">Nos Créations</h2>
+  <h1>Bienvenue chez Ô Fleurs</h1>
+  <p class="hero-subtitle">La poésie de la nature sauvage, immortalisée en bijoux et créations botaniques.</p>
 
-  <div class="carousel-container">
-    <!-- Flèche Gauche -->
-    <button class="carousel-arrow prev-btn" aria-label="Précédent">&#10094;</button>
+  <!-- SECTION CATÉGORIES EN BULLES -->
+  <section class="home-categories-section">
+    <h2 class="section-title">Mes Créations</h2>
 
-    <!-- Zone Image Unique au Centre -->
-    <div class="carousel-display">
-		<!-- Slide 1 : Préservation -->
-		<div class="carousel-slide active">
-			<img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Préservation" />
-			<div class="slide-content">
-			<h3>Préservation de bouquets</h3>
-			<a href="/preservation" class="btn-slide">Découvrir</a>
-			</div>
-		</div>
-		<!-- Slide 2 : Bijoux -->
-		<div class="carousel-slide">
-			<img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Bijoux" />
-			<div class="slide-content">
-			<h3>Bijoux Botaniques</h3>
-			<a href="/bijoux" class="btn-slide">Voir la collection</a>
-			</div>
-		</div>
-      <!--<img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Création Ô Fleurs 1" class="carousel-slide active" />
-      <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Création Ô Fleurs 2" class="carousel-slide" /> -->
+    <div class="categories-container">
+      
+      <!-- Categorie 1 : Préservation -->
+      <a href="/preservation" class="category-card">
+        <div class="category-image-wrapper">
+          <img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Préservation de bouquets" loading="lazy" />
+        </div>
+        <h3 class="category-title">Préservation de bouquets</h3>
+      </a>
+
+      <!-- Categorie 2 : Bijoux -->
+      <a href="/bijoux" class="category-card">
+        <div class="category-image-wrapper">
+          <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Bijoux Botaniques" loading="lazy" />
+        </div>
+        <h3 class="category-title">Bijoux Botaniques</h3>
+      </a>
+
     </div>
+  </section>
 
-    <!-- Flèche Droite -->
-    <button class="carousel-arrow next-btn" aria-label="Suivant">&#10095;</button>
+  <!-- PRESENTATION ELODIE -->
+  <div class="product-description-vertical about-description">
+    <p class="steps-title"><strong>Enchantée, moi c'est Élodie ! 🌿</strong></p>
+
+    <p>Je suis Élodie, une femme toute simple, amoureuse de la nature sous toutes ses formes et des fleurs — toutes les fleurs ! Des plus petites fleurs sauvages (véroniques, carottes sauvages, mauves, fleurs de trèfles, boutons d'or...) aux plus élégantes et sophistiquées (roses, pivoines, lys, hortensias), en passant par les feuillages de toutes ces demoiselles pour finir par mon <em>number one</em> : <strong>le lierre ❤️</strong></p>
+
+    <p>La seule chose que je n'aime pas avec les fleurs, c'est les voir faner. J'ai donc décidé d'apprendre à les faire sécher. La bricoleuse en moi a adoré fabriquer des presses à fleurs, et une petite idée folle a germé en moi : <em>pourquoi ne pas en faire mon métier ?</em></p>
+
+    <p class="warning-box poetic-box">
+      🪻 <span>Mon monde idéal en deux mots :</span><br />
+      <strong>Douceur & Poésie</strong>
+    </p>
+
+    <p>C'est dans cet esprit-là, avec une folle envie de beau, de joie, d'amour et tout en simplicité, que je me suis lancée dans la folle aventure qu'est l'entrepreneuriat pour enfin vivre de ce qui me fait vibrer.</p>
+
+    <p class="final-question">
+      J'espère que toi qui passeras sur mon site, tu ressentiras toute la passion que je mets dans mes créations, et qu'elles t'apporteront... <strong>Douceur et poésie 🌻</strong>
+    </p>
+
+    <div class="about-photo-wrapper">
+      <img src="/images/elo-présentation.jpeg" alt="Élodie - Ô Fleurs" loading="lazy" />
+    </div>
   </div>
 
-  <!-- Points de repère en dessous -->
-  <div class="carousel-indicators">
-    <span class="indicator-dot active"></span>
-    <span class="indicator-dot"></span>
-  </div>
-</section>
-
-<div class="product-description-vertical about-description" text-align="center" max-width="90%">
-  <p class="steps-title"><strong>Enchantée, moi c'est Élodie ! 🌿</strong></p>
-
-  <p>Je suis Élodie, une femme toute simple, amoureuse de la nature sous toutes ses formes et des fleurs — toutes les fleurs ! Des plus petites fleurs sauvages (véroniques, carottes sauvages, mauves, fleurs de trèfles, boutons d'or...) aux plus élégantes et sophistiquées (roses, pivoines, lys, hortensias), en passant par les feuillages de toutes ces demoiselles pour finir par mon <em>number one</em> : <strong>le lierre ❤️</strong></p>
-
-  <p>La seule chose que je n'aime pas avec les fleurs, c'est les voir faner. J'ai donc décidé d'apprendre à les faire sécher. La bricoleuse en moi a adoré fabriquer des presses à fleurs, et une petite idée folle a germé en moi : <em>pourquoi ne pas en faire mon métier ?</em></p>
-
-  <p class="warning-box poetic-box">
-    🪻 <span>Mon monde idéal en deux mots :</span><br />
-    <strong>Douceur & Poésie</strong>
-  </p>
-
-  <p>C'est dans cet esprit-là, avec une folle envie de beau, de joie, d'amour et tout en simplicité, que je me suis lancée dans la folle aventure qu'est l'entrepreneuriat pour enfin vivre de ce qui me fait vibrer.</p>
-
-  <p class="final-question">
-    J'espère que toi qui passeras sur mon site, tu ressentiras toute la passion que je mets dans mes créations, et qu'elles t'apporteront... <strong>Douceur et poésie 🌻</strong>
-  </p>
-
-  <div class="about-photo-wrapper">
-    <img src="/images/elo-présentation.jpeg" alt="Élodie - Ô Fleurs" loading="lazy" />
-  </div>
-</div>
-
-
-<!-- SCRIPT DE DÉFILEMENT SIMPLE -->
-<script>
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.indicator-dot');
-  const nextBtn = document.querySelector('.next-btn');
-  const prevBtn = document.querySelector('.prev-btn');
-  let currentIndex = 0;
-
-  // CORRECTION 1 : On précise que 'index' est un nombre (: number)
-  function showSlide(index: number) {
-    if (index >= slides.length) {
-      currentIndex = 0;
-    } else if (index < 0) {
-      currentIndex = slides.length - 1;
-    } else {
-      currentIndex = index;
-    }
-
-    // On change l'image active
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentIndex);
-    });
-
-    // On change le point actif
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentIndex);
-    });
-  }
-
-  // CORRECTION 2 & 3 : On vérifie que les boutons existent bien avant d'écouter le clic
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
-  }
-  
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-  }
-
-  // Les "dots" utilisent querySelectorAll (qui renvoie une liste vide si rien n'est trouvé, mais jamais null),
-  // et l'index est automatiquement typé par le forEach, donc pas d'erreur ici !
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index));
-  });
-</script>
 </MainLayout>
