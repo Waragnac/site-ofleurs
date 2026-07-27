@@ -5,27 +5,29 @@ import MainLayout from '../layouts/Mainlayout.astro';
   <h1>Bienvenue chez Ô Fleurs</h1>
   <p class="hero-subtitle">La poésie de la nature sauvage, immortalisée en bijoux et créations botaniques.</p>
 
-  <!-- SECTION CATÉGORIES EN BULLES -->
+<!-- SECTION CATÉGORIES EN BULLES -->
   <section class="home-categories-section">
     <h2 class="section-title">Mes Créations</h2>
 
     <div class="categories-container">
       
-      <!-- Categorie 1 : Préservation -->
+      <!-- Categorie 1 -->
       <a href="/preservation" class="category-card">
         <div class="category-image-wrapper">
           <img src="/images/encadrez_votre_bouquet_de_mariée.jpg" alt="Préservation de bouquets" loading="lazy" />
         </div>
-        <h3 class="category-title">Préservation de bouquets</h3>
+        <span class="category-title">Préservation de bouquets</span>
       </a>
 
-      <!-- Categorie 2 : Bijoux -->
+      <!-- Categorie 2 -->
       <a href="/bijoux" class="category-card">
         <div class="category-image-wrapper">
           <img src="/images/collier_violet_dentelle_reine_anne_forme_ovale.jpg" alt="Bijoux Botaniques" loading="lazy" />
         </div>
-        <h3 class="category-title">Bijoux Botaniques</h3>
+        <span class="category-title">Bijoux Botaniques</span>
       </a>
+
+      <!-- Quand tu voudras ajouter une 3ème ou 4ème catégorie, il te suffira de dupliquer un bloc <a class="category-card"> ici ! -->
 
     </div>
   </section>
