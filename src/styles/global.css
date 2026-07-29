@@ -1061,53 +1061,41 @@ header.scrolled nav {
    -------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
-    /* 1. On réduit la marge du body pour libérer de la hauteur */
     body {
-        padding-top: 130px;
-        /* Au lieu de 195px : gagne de la place en hauteur ! */
+        padding-top: 140px;
+        /* Ajuste la hauteur de compensation sous le header */
     }
-    /* 2. Header & Logo plus compacts */
+    /* 1. On libère les bords du header */
     header {
-        padding: 0.6rem 1rem;
-        min-height: auto;
+        padding: 0.5rem 0.2rem !important;
+    }
+    .header-container {
+        width: 100%;
+        padding: 0;
+    }
+    /* 2. Logo plus petit sur mobile */
+    .logo img {
+        height: 45px;
     }
     .logo {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
-    .logo img {
-        height: 50px;
-        /* Logo réduit sur mobile */
-    }
-    /* 3. Navigation "Pilule" adaptée pour tenir sur 360px */
+    /* 3. Pilule de menu contenue dans l'écran */
     nav {
-        gap: 10px;
-        padding: 0.3rem 0.8rem;
-        max-width: 100%;
+        max-width: 95vw !important;
+        /* Force la pilule à ne jamais dépasser de l'écran */
         box-sizing: border-box;
+        gap: 6px !important;
+        /* Espace réduit entre les boutons */
+        padding: 0.4rem 0.5rem !important;
+        justify-content: space-evenly;
     }
     nav a {
-        font-size: 0.65rem;
-        /* Texte ajusté pour éviter que "PRÉSERVATION..." n'écarte tout */
-        letter-spacing: 0.5px;
-    }
-    /* 4. Titres et marges verticales */
-    h1 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    /* 5. Ajustement du texte de présentation */
-    .about-description {
-        padding: 0 1rem;
-        margin: 1.5rem auto;
-    }
-    /* 6. Contact & Formulaire */
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .form-group-row {
-        flex-direction: column;
-        gap: 1rem;
+        font-size: 0.58rem !important;
+        /* Taille de texte ajustée */
+        letter-spacing: 0 !important;
+        /* Supprime le trop-plein d'espace entre les lettres */
+        text-align: center;
     }
 }
 
