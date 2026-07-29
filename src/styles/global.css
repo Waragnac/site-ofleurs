@@ -1057,79 +1057,166 @@ header.scrolled nav {
 
 
 /* --------------------------------------------------------------------------
-   9. MEDIA QUERIES GLOBALES (RESPONSIVE MOBILES)
+   9. MEDIA QUERIES GLOBALES (RESPONSIVE MOBILES COMPLET)
    -------------------------------------------------------------------------- */
+
+
+/* Sécurité anti-débordement global */
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* --- ADAPTATION MOBILES & TABLETTES (<= 768px) --- */
 
 @media (max-width: 768px) {
     body {
-        padding-top: 140px;
-        /* Ajuste la hauteur de compensation sous le header */
+        padding-top: 130px !important;
     }
-    /* 1. On libère les bords du header */
+    /* 1. HEADER & NAVIGATION */
     header {
-        padding: 0.5rem 0.2rem !important;
-    }
-    .header-container {
-        width: 100%;
-        padding: 0;
-    }
-    /* 2. Logo plus petit sur mobile */
-    .logo img {
-        height: 45px;
-    }
-    .logo {
-        margin-bottom: 8px;
-    }
-    /* 3. Pilule de menu contenue dans l'écran */
-    nav {
-        max-width: 95vw !important;
-        /* Force la pilule à ne jamais dépasser de l'écran */
+        padding: 0.5rem 0.5rem !important;
+        width: 100vw;
         box-sizing: border-box;
-        gap: 6px !important;
-        /* Espace réduit entre les boutons */
-        padding: 0.4rem 0.5rem !important;
-        justify-content: space-evenly;
     }
-    nav a {
-        font-size: 0.58rem !important;
-        /* Taille de texte ajustée */
-        letter-spacing: 0 !important;
-        /* Supprime le trop-plein d'espace entre les lettres */
-        text-align: center;
-    }
-    /* On force l'alignement vertical même en mode scrolled */
+    .header-container,
     header.scrolled .header-container {
+        width: 100% !important;
+        max-width: 100% !important;
         flex-direction: column !important;
-        gap: 0.3rem !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
     }
-    /* Logo plus petit et discret quand on scroll */
+    .logo img {
+        height: 40px !important;
+    }
     header.scrolled .logo img {
         height: 35px !important;
     }
-    /* La pilule de menu reste centrée et contenue */
-    header.scrolled nav {
-        padding: 0.3rem 0.5rem !important;
-        gap: 6px !important;
-        max-width: 95vw !important;
+    .logo,
+    header.scrolled .logo {
+        margin-bottom: 0 !important;
     }
+    /* Icônes utilisateur */
+    .user-space {
+        position: absolute !important;
+        right: 12px !important;
+        top: 10px !important;
+        gap: 10px !important;
+    }
+    .icon-link {
+        padding: 6px !important;
+    }
+    /* Pilule du menu */
+    nav,
+    header.scrolled nav {
+        width: 100% !important;
+        max-width: calc(100vw - 20px) !important;
+        box-sizing: border-box !important;
+        gap: 4px !important;
+        padding: 0.4rem 0.3rem !important;
+        justify-content: space-evenly !important;
+    }
+    nav a,
     header.scrolled nav a {
-        font-size: 0.58rem !important;
+        font-size: 0.55rem !important;
         letter-spacing: 0 !important;
+        white-space: nowrap;
+    }
+    /* 2. CARROUSEL (ADAPTÉ SUR MOBILE) */
+    .home-carousel-section {
+        width: 100% !important;
+        padding: 0 0.8rem !important;
+        margin: 1.5rem auto !important;
+    }
+    .carousel-container {
+        position: relative !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+    .carousel-display {
+        width: 100% !important;
+        height: 250px !important;
+        border-radius: 12px !important;
+    }
+    /* Flèches superposées sur l'image */
+    .carousel-arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 10 !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 1rem !important;
+        background: rgba(74, 93, 78, 0.85) !important;
+    }
+    .prev-btn {
+        left: 8px !important;
+    }
+    .next-btn {
+        right: 8px !important;
+    }
+    /* 3. PAGE CONTACT (EN 1 COLONNE) */
+    .contact-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+        gap: 2rem !important;
+        box-sizing: border-box !important;
+    }
+    .profile-column,
+    .form-column {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 1.2rem !important;
+    }
+    .photo-wrapper {
+        height: 240px !important;
+    }
+    .form-group-row {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    /* 4. SÉCURITÉ CONTENU & DESCRIPTION */
+    .product-wrapper,
+    .product-wrapper-vertical,
+    .about-description {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+        box-sizing: border-box !important;
     }
 }
 
 
-/* Ajustement spécifique pour très petits écrans (<= 380px comme le S10) */
+/* --- AJUSTEMENT ULTRA-MOBILES (<= 380px comme Galaxy S10) --- */
 
 @media (max-width: 380px) {
-    nav {
-        gap: 6px;
-        padding: 0.3rem 0.5rem;
+    nav,
+    header.scrolled nav {
+        gap: 3px !important;
+        padding: 0.3rem 0.3rem !important;
     }
-    nav a {
-        font-size: 0.6rem;
+    nav a,
+    header.scrolled nav a {
+        font-size: 0.52rem !important;
     }
-    /* Ajuste la taille des bulles pour qu'elles restent côte à côte */
+    /* Bulles réduites à 130px pour le côte-à-côte */
     .home-categories-section .category-card,
     .home-categories-section .category-image-wrapper {
         width: 130px !important;
