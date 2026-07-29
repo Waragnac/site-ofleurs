@@ -1068,15 +1068,14 @@ label::after {
 }
 
 .press-photo-wrapper img {
-    width: 100%;
-    max-width: 450px;
-    /* Taille idéale pour s'insérer harmonieusement au milieu du texte */
-    max-height: 600px;
+    max-width: 350px;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     display: block;
-    margin: 0 auto;
+    margin: 2rem auto;
+    /* <-- Le "auto" ici centre l'image parfaitement ! */
+    object-fit: cover;
+    border-radius: 12px;
+    /* Optionnel : pour garder les coins doucement arrondis */
 }
 
 .press-photo-wrapper figcaption {
