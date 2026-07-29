@@ -1057,43 +1057,75 @@ header.scrolled nav {
 
 
 /* --------------------------------------------------------------------------
-   9. MEDIA QUERIES GLOBALES (MOBILES)
+   9. MEDIA QUERIES GLOBALES (RESPONSIVE MOBILES)
    -------------------------------------------------------------------------- */
 
 @media (max-width: 768px) {
+    /* 1. On réduit la marge du body pour libérer de la hauteur */
+    body {
+        padding-top: 130px;
+        /* Au lieu de 195px : gagne de la place en hauteur ! */
+    }
+    /* 2. Header & Logo plus compacts */
+    header {
+        padding: 0.6rem 1rem;
+        min-height: auto;
+    }
+    .logo {
+        margin-bottom: 6px;
+    }
+    .logo img {
+        height: 50px;
+        /* Logo réduit sur mobile */
+    }
+    /* 3. Navigation "Pilule" adaptée pour tenir sur 360px */
+    nav {
+        gap: 10px;
+        padding: 0.3rem 0.8rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    nav a {
+        font-size: 0.65rem;
+        /* Texte ajusté pour éviter que "PRÉSERVATION..." n'écarte tout */
+        letter-spacing: 0.5px;
+    }
+    /* 4. Titres et marges verticales */
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    /* 5. Ajustement du texte de présentation */
+    .about-description {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+    }
+    /* 6. Contact & Formulaire */
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
     }
     .form-group-row {
         flex-direction: column;
-        gap: 1.2rem;
-    }
-    .carousel-container {
-        gap: 10px;
-    }
-    .carousel-display {
-        height: 280px;
-    }
-    .carousel-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
+        gap: 1rem;
     }
 }
 
-@media (max-width: 600px) {
-    .home-categories-section .categories-container {
-        gap: 1.8rem;
+
+/* Ajustement spécifique pour très petits écrans (<= 380px comme le S10) */
+
+@media (max-width: 380px) {
+    nav {
+        gap: 6px;
+        padding: 0.3rem 0.5rem;
     }
+    nav a {
+        font-size: 0.6rem;
+    }
+    /* Ajuste la taille des bulles pour qu'elles restent côte à côte */
     .home-categories-section .category-card,
     .home-categories-section .category-image-wrapper {
-        width: 140px !important;
-        height: 140px !important;
-    }
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        width: 130px !important;
+        height: 130px !important;
     }
 }
