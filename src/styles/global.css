@@ -1261,7 +1261,11 @@ label::after {
     max-width: 450px;
     height: auto;
     display: block;
+    margin: 2rem auto;
+    /* <-- Le "auto" ici centre l'image parfaitement ! */
     object-fit: cover;
+    border-radius: 12px;
+    /* Optionnel : pour garder les coins doucement arrondis */
 }
 
 
