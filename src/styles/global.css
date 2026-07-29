@@ -1097,6 +1097,25 @@ header.scrolled nav {
         /* Supprime le trop-plein d'espace entre les lettres */
         text-align: center;
     }
+    /* On force l'alignement vertical même en mode scrolled */
+    header.scrolled .header-container {
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+    }
+    /* Logo plus petit et discret quand on scroll */
+    header.scrolled .logo img {
+        height: 35px !important;
+    }
+    /* La pilule de menu reste centrée et contenue */
+    header.scrolled nav {
+        padding: 0.3rem 0.5rem !important;
+        gap: 6px !important;
+        max-width: 95vw !important;
+    }
+    header.scrolled nav a {
+        font-size: 0.58rem !important;
+        letter-spacing: 0 !important;
+    }
 }
 
 
