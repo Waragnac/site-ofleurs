@@ -8,6 +8,7 @@
    6. PAGE : FICHE PRODUIT (Vue détaillée)
    7. PAGE : CONTACT (Bio & Formulaire)
    8. FOOTER (Pied de page)
+   9. PAGE : MENTIONS
    ========================================================================== */
 
 
@@ -1062,6 +1063,61 @@ header.scrolled nav {
     text-align: center;
 }
 
+
+/* --------------------------------------------------------------------------
+   8.1 PAGES JURIDIQUES (MENTIONS LÉGALES & CONFIDENTIALITÉ)
+   -------------------------------------------------------------------------- */
+
+.legal-container {
+    max-width: 850px;
+    margin: 2rem auto 4rem auto;
+    padding: 3rem 2.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e9edc9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    text-align: left;
+    /* Alignement à gauche pour un grand confort de lecture */
+}
+
+.legal-container h1 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.legal-container h2 {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-top: 2.2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #f0f4ed;
+    padding-bottom: 0.4rem;
+}
+
+.legal-container p,
+.legal-container ul {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.98rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.legal-container ul {
+    padding-left: 1.5rem;
+}
+
+.legal-container li {
+    margin-bottom: 0.4rem;
+}
+
+.legal-container strong {
+    color: #2c3e35;
+}
+
 CSS
 /* --------------------------------------------------------------------------
    9. MEDIA QUERIES GLOBALES (RESPONSIVE MOBILES & BURGER MENU)
@@ -1267,6 +1323,18 @@ body {
         max-width: 100% !important;
         padding: 0 1rem !important;
         box-sizing: border-box !important;
+    }
+    /* MENTIONS LEGALES */
+    .legal-container {
+        padding: 1.5rem 1.2rem;
+        margin: 1rem auto 2.5rem auto;
+        border-radius: 12px;
+    }
+    .legal-container h1 {
+        font-size: 1.6rem;
+    }
+    .legal-container h2 {
+        font-size: 1.1rem;
     }
 }
 
