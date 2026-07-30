@@ -1084,12 +1084,18 @@ body {
 /* --- ADAPTATION MOBILES & TABLETTES (<= 768px) --- */
 
 @media (max-width: 768px) {
-    /* Marge du haut ajustée pour le header mobile */
+    /* 1. Marge du haut du body calée sur 25% de la hauteur de l'écran */
     body {
-        padding-top: 155px !important;
+        padding-top: 25vh !important;
     }
-    /* 1. HEADER & LOGO CENTRÉ */
+    /* 2. HEADER À 25% DE LA HAUTEUR DE L'ÉCRAN */
     header {
+        height: 25vh !important;
+        min-height: 140px !important;
+        /* Sécurité pour ne jamais être trop écrasé */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         padding: 0.8rem 1rem !important;
         width: 100vw;
     }
@@ -1099,27 +1105,32 @@ body {
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
+        height: 100% !important;
     }
-    /* Logo GRAND et centré au milieu sur mobile */
+    /* 3. LOGO BIEN PLUS GRAND ET MAJESTUEUX */
     .logo img,
     header.scrolled .logo img {
-        height: 75px !important;
+        height: 130px !important;
+        /* Taille augmentée (au lieu de 75px) */
+        max-height: 17vh !important;
+        /* Garde des proportions parfaites dans les 25vh */
+        width: auto !important;
     }
     .logo,
     header.scrolled .logo {
         margin: 0 auto !important;
     }
-    /* 2. BOUTON BURGER (3 traits à gauche) */
+    /* 4. BOUTON BURGER RECENTRÉ VERTICALEMENT */
     .hamburger-btn {
         display: flex !important;
         flex-direction: column;
         justify-content: space-between;
         position: absolute;
-        left: 12px;
+        left: 15px;
         top: 50%;
         transform: translateY(-50%);
-        width: 28px;
-        height: 20px;
+        width: 30px;
+        height: 22px;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -1133,17 +1144,16 @@ body {
         border-radius: 3px;
         transition: all 0.3s ease-in-out;
     }
-    /* Animation des 3 traits vers la croix 'X' au clic */
     .hamburger-btn.active span:nth-child(1) {
-        transform: translateY(8.5px) rotate(45deg);
+        transform: translateY(9.5px) rotate(45deg);
     }
     .hamburger-btn.active span:nth-child(2) {
         opacity: 0;
     }
     .hamburger-btn.active span:nth-child(3) {
-        transform: translateY(-8.5px) rotate(-45deg);
+        transform: translateY(-9.5px) rotate(-45deg);
     }
-    /* 3. MENU DÉROULANT VERTICAL */
+    /* 5. MENU DÉROULANT QUI S'OUVRE SOUS LE HEADER GRAND FORMAT */
     header nav,
     header.scrolled nav {
         display: none !important;
@@ -1153,7 +1163,7 @@ body {
         display: flex !important;
         flex-direction: column !important;
         position: absolute !important;
-        top: calc(100% + 0.8rem) !important;
+        top: 100% !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         width: calc(100vw - 30px) !important;
@@ -1178,7 +1188,7 @@ body {
     header nav.active a:last-child {
         border-bottom: none;
     }
-    /* 4. CARROUSEL ADAPTÉ MOBILES */
+    /* 6. CARROUSEL ADAPTÉ MOBILES */
     .home-carousel-section {
         width: 100% !important;
         padding: 0 0.8rem !important;
@@ -1210,7 +1220,7 @@ body {
     .next-btn {
         right: 8px !important;
     }
-    /* 5. PAGE CONTACT EN 1 COLONNE */
+    /* 7. PAGE CONTACT EN 1 COLONNE */
     .contact-container {
         display: flex !important;
         flex-direction: column !important;
@@ -1239,7 +1249,7 @@ body {
         width: 100% !important;
         box-sizing: border-box !important;
     }
-    /* 6. SÉCURITÉ DE LARGEUR */
+    /* 8. SÉCURITÉ DE LARGEUR */
     .product-wrapper,
     .product-wrapper-vertical,
     .about-description {
