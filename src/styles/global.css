@@ -1120,38 +1120,48 @@ body {
     header.scrolled .logo {
         margin: 0 auto !important;
     }
-    /* 4. BOUTON BURGER RECENTRÉ VERTICALEMENT */
+    /* 4. BOUTON BURGER HABILLÉ (Carré arrondi sur fond doux) */
     .hamburger-btn {
         display: flex !important;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
         position: absolute;
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
-        width: 30px;
-        height: 22px;
-        background: transparent;
-        border: none;
+        width: 44px;
+        height: 44px;
+        background-color: #F3FCBB !important;
+        /* Le vert pistache doux de ton menu */
+        border: 1px solid var(--primary) !important;
+        /* Bordure vert foncé pour le contraste */
+        border-radius: 12px;
+        /* Coins gentiment arrondis */
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        /* Ombre légère pour décoller du fond fleuri */
         cursor: pointer;
         padding: 0;
         z-index: 1001;
+        transition: all 0.3s ease;
     }
     .hamburger-btn span {
-        width: 100%;
-        height: 3px;
+        width: 22px;
+        height: 2.5px;
         background-color: var(--primary);
         border-radius: 3px;
         transition: all 0.3s ease-in-out;
     }
+    /* Animation des 3 traits vers la croix 'X' au clic */
     .hamburger-btn.active span:nth-child(1) {
-        transform: translateY(9.5px) rotate(45deg);
+        transform: translateY(7.5px) rotate(45deg);
     }
     .hamburger-btn.active span:nth-child(2) {
         opacity: 0;
     }
     .hamburger-btn.active span:nth-child(3) {
-        transform: translateY(-9.5px) rotate(-45deg);
+        transform: translateY(-7.5px) rotate(-45deg);
     }
     /* 5. MENU DÉROULANT QUI S'OUVRE SOUS LE HEADER GRAND FORMAT */
     header nav,
