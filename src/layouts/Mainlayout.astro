@@ -3,87 +3,107 @@ import '../styles/global.css';
 const { title } = Astro.props;
 ---
 <html lang="fr">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>{title} | Ô Fleurs</title>
-	</head>
-	<body>
-		<header>
-			<div class="header-container">
-				<!-- Le Logo à gauche -->
-				<div class="logo">
-				<a href="/">
-					<img src="/images/logo.png" alt="Logo Ô Fleurs" width="300" height="400" />
-				</a>
-				</div>
-				
-				<!-- Le Menu au centre -->
-				<nav>
-				<a href="/" class="onglet_accueil">Accueil</a>
-				<a href="/preservation" class="onglet_preservation">Préservation de bouquets</a>
-				<a href="/bijoux" class="onglet_bijoux">Bijoux</a>
-				<!-- <a href="/presses" class="onglet_presses">Presses à fleurs</a>
-				<a href="/cadres" class="onglet_cadres">Cadres</a>-->
-				<a href="/contact" class="onglet_contact">Contact</a>
-				</nav>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>{title} | Ô Fleurs</title>
+    </head>
+    <body>
+        <header>
+            <div class="header-container">
+                
+                <!-- Bouton Burger (Affiché UNIQUEMENT sur mobile) -->
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-				<!-- La Connexion à droite 
-				<div class="user-space">
-				</div>
-				-->
-				
-			</div>
-		</header>
-		<main>
-			<slot /> <!-- C'est ici que le contenu de chaque page s'affichera -->
-		</main>
-		<footer class="site-footer">
-			<div class="footer-container">
-				
-				<!-- Liens d'information / Juridiques -->
-				<nav class="footer-links">
-				<a href="/mentions-legales">Mentions Légales</a>
-				<a href="/politique-confidentialite">Politique de Confidentialité</a>
-				<a href="/cgv">CGV</a>
-				<a href="/politique-retour">Politique de Retour</a>
-				</nav>
+                <!-- Le Logo à gauche (passera au centre sur mobile) -->
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/logo.png" alt="Logo Ô Fleurs" width="300" height="400" />
+                    </a>
+                </div>
+                
+                <!-- Le Menu au centre -->
+                <nav id="nav-menu">
+                    <a href="/" class="onglet_accueil">Accueil</a>
+                    <a href="/preservation" class="onglet_preservation">Préservation de bouquets</a>
+                    <a href="/bijoux" class="onglet_bijoux">Bijoux</a>
+                    <!-- <a href="/presses" class="onglet_presses">Presses à fleurs</a>
+                    <a href="/cadres" class="onglet_cadres">Cadres</a>-->
+                    <a href="/contact" class="onglet_contact">Contact</a>
+                </nav>
 
-				<!-- Réseaux Sociaux -->
-				<div class="footer-socials">
-					<a href="https://www.facebook.com/people/%C3%94-fleurs/61589665918255/" class="icon-link" title="Nous suivre sur Facebook" target="_blank" rel="noopener noreferrer">
-						<img src="/images/facebook.jpeg" alt="Facebook Ô Fleurs" width="24" height="24" />
-					</a>
-					
-					<a href="https://www.instagram.com/ofleurs.creation?igsh=ZTFuMHhpNXg1cnYy" class="icon-link" title="Nous suivre sur Instagram" target="_blank" rel="noopener noreferrer">
-						<img src="/images/instagram.jpeg" alt="Instagram Ô Fleurs" width="24" height="24" />
-					</a>
-				</div>
+                <!-- La Connexion à droite 
+                <div class="user-space">
+                </div>
+                -->
+                
+            </div>
+        </header>
 
-				<!-- Ligne de séparation fine -->
-				<div class="footer-divider"></div>
+        <main>
+            <slot /> <!-- C'est ici que le contenu de chaque page s'affichera -->
+        </main>
 
-				<!-- Copyright -->
-				<p class="footer-copyright">
-				© 2026, Ô Fleurs
-				</p>
+        <footer class="site-footer">
+            <div class="footer-container">
+                
+                <!-- Liens d'information / Juridiques -->
+                <nav class="footer-links">
+                    <a href="/mentions-legales">Mentions Légales</a>
+                    <a href="/politique-confidentialite">Politique de Confidentialité</a>
+                    <a href="/cgv">CGV</a>
+                    <a href="/politique-retour">Politique de Retour</a>
+                </nav>
 
-			</div>
-		</footer>
-		<script>
-			const header = document.querySelector('header');
-			
-			// On vérifie que le header existe bien pour rassurer TypeScript
-			if (header) {
-				window.addEventListener('scroll', () => {
-				if (window.scrollY > 50) {
-					header.classList.add('scrolled');
-				} else {
-					header.classList.remove('scrolled');
-				}
-				});
-			}
-		</script>
-	</body>
+                <!-- Réseaux Sociaux -->
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/people/%C3%94-fleurs/61589665918255/" class="icon-link" title="Nous suivre sur Facebook" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/facebook.jpeg" alt="Facebook Ô Fleurs" width="24" height="24" />
+                    </a>
+                    
+                    <a href="https://www.instagram.com/ofleurs.creation?igsh=ZTFuMHhpNXg1cnYy" class="icon-link" title="Nous suivre sur Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="/images/instagram.jpeg" alt="Instagram Ô Fleurs" width="24" height="24" />
+                    </a>
+                </div>
+
+                <!-- Ligne de séparation fine -->
+                <div class="footer-divider"></div>
+
+                <!-- Copyright -->
+                <p class="footer-copyright">
+                    © 2026, Ô Fleurs
+                </p>
+
+            </div>
+        </footer>
+
+        <script>
+            const header = document.querySelector('header');
+            const burgerBtn = document.getElementById('hamburger-btn');
+            const navMenu = document.getElementById('nav-menu');
+            
+            // Gestion du Scroll pour réduire le header
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Gestion du Clic Burger
+            if (burgerBtn && navMenu) {
+                burgerBtn.addEventListener('click', () => {
+                    burgerBtn.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        </script>
+    </body>
 </html>
-
